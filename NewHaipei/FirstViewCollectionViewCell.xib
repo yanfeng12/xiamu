@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="FirstViewCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="83" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="83" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aBE-Nu-cPZ">
+                        <rect key="frame" x="0.0" y="0.0" width="83" height="100"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="aBE-Nu-cPZ" secondAttribute="bottom" id="Fvl-9x-pvs"/>
+                <constraint firstItem="aBE-Nu-cPZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OAc-Ge-7Ul"/>
+                <constraint firstAttribute="trailing" secondItem="aBE-Nu-cPZ" secondAttribute="trailing" id="aX8-7N-jIv"/>
+                <constraint firstItem="aBE-Nu-cPZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ywP-of-4hL"/>
+            </constraints>
+            <size key="customSize" width="153" height="160"/>
+            <connections>
+                <outlet property="imgView" destination="aBE-Nu-cPZ" id="nAJ-5W-0e7"/>
+            </connections>
+            <point key="canvasLocation" x="152" y="155"/>
+        </collectionViewCell>
+    </objects>
+</document>

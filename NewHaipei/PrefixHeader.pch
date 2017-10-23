@@ -1,0 +1,68 @@
+//
+//  PrefixHeader.pch
+//  NewHaipei
+//
+//  Created by guopenglai on 2017/4/12.
+//  Copyright © 2017年 guopenglai. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import "Masonry.h"
+#import "SVProgressHUD.h"
+#import "Reachability.h"
+#ifdef DEBUG
+#define LZLog(s, ... ) NSLog( @"[%@：in line: %d]-->[message: %@]", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
+#else
+#define LZLog(s, ... )
+#endif
+
+#define LZWeakSelf(ws) __weak typeof(self) ws = self;
+
+#define LZWeak(sf, value) __weak typeof(value) sf = value;
+// Hex色值
+#define LZColorFromHex(rgbValue) [UIColor \
+colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
+green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
+blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+//R G B 颜色
+#define LZColorFromRGB(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+
+//008e14 三叶草绿
+//09c628
+#define LZColorBase LZColorFromHex(0x0075a9)
+#define LZFontDefaulte [UIFont systemFontOfSize:14]
+#define LZColorGray LZColorFromHex(0x555555)
+
+#define LZSCREEN_HEIGHT [[UIScreen mainScreen]bounds].size.height
+#define LZSCREEN_WIDTH [[UIScreen mainScreen]bounds].size.width
+
+
+#define LZNavigationHeight 64
+#define LZTabBarHeight 49
+
+//#define LL_iPhoneX  LZSCREEN_WIDTH == 375.0 && LZSCREEN_HEIGHT == 812.0 ?true:false
+//#define letkNavibarH  LL_iPhoneX ? 88.0 : 64.0
+
+
+//推送相关
+#define kNotificationCategoryIdentifile @"kNotificationCategoryIdentifile"
+#define kNotificationActionIdentifileStar @"kNotificationActionIdentifileStar"
+#define kNotificationActionIdentifileComment @"kNotificationActionIdentifileComment"
+#define kLocalNotificationKey @"kLocalNotificationKey"
+
+//数据库表格
+#define LZSqliteName @"userData"
+#define LZSqliteDataTableName @"newUserAccountData"
+#define LZSqliteGroupTableName @"userAccountGroup"
+#define LZSqliteDataPasswordKey @"passwordKey"
+//数据库数据有更新的通知key
+#define LZSqliteValuesChangedKey @"sqliteValuesChanged"
+
+//默认GroupID
+#define LZSqliteGroupID @"GPLGroupID"
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
