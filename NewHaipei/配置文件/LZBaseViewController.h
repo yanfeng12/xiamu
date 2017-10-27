@@ -17,6 +17,17 @@ typedef void(^lzButtonBlock)(UIButton* button);
 
 @property (nonatomic,copy)NSString *flog;
 
+
+@property(nonatomic,strong)UITableView *tableView;
+
+@property(nonatomic,strong)NSMutableArray *dataSource;
+-(void)registerCellWithNib:(NSString *)nibName tableView:(UITableView *)tableView;
+
+-(void)registerCellWithClass:(NSString *)className tableView:(UITableView *)tableView;
+
+-(int)getRandomNumber:(int)from to:(int)to;
+
+
 - (void)lzSetNavigationTitle:(NSString*)title;
 - (void)lzSetLeftButtonWithTitle:(NSString*)title
                    selectedImage:(NSString*)selectImageName

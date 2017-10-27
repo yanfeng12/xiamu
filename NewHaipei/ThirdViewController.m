@@ -35,6 +35,12 @@ DZNEmptyDataSetDelegate>
     self.view.backgroundColor = [UIColor whiteColor];
     [self lzSetNavigationTitle:@"新闻"];
 
+    LZWeakSelf(ws)
+    [self lzSetLeftButtonWithTitle:nil selectedImage:@"houtui" normalImage:@"houtui" actionBlock:^(UIButton *button) {
+        
+        [ws.navigationController popViewControllerAnimated:YES];
+    }];
+    
     [self myTableView];
     
     [self loadData];
@@ -149,7 +155,7 @@ DZNEmptyDataSetDelegate>
         [table mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(self.view).offset(LZNavigationHeight);
             make.left.right.and.mas_equalTo(self.view);
-            make.bottom.mas_equalTo(self.view).offset(-LZTabBarHeight);
+            make.bottom.mas_equalTo(self.view).offset(0);
         }];
     }
     

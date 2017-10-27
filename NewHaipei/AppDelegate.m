@@ -11,7 +11,8 @@
 #import "LZTabBarController.h"
 #import "FirstViewController.h"
 #import "SecondViewController.h"
-#import "ThirdViewController.h"
+#import "DiscoverViewController.h"
+//#import "ThirdViewController.h"
 #import "FourthViewController.h"
 #import "LZBaseNavigationController.h"
 #import "TouchIdUnlock.h"
@@ -209,14 +210,15 @@
 
     SecondViewController *second = [[SecondViewController alloc]init];
 
-    ThirdViewController *third = [[ThirdViewController alloc]init];
+//    ThirdViewController *third = [[ThirdViewController alloc]init];
+    DiscoverViewController *third = [[DiscoverViewController alloc]init];
     
     FourthViewController *fourth = [[FourthViewController alloc]init];
     
     LZTabBarController *tabbar = [LZTabBarController createTabBarController:^LZTabBarConfig *(LZTabBarConfig *config) {
         
         config.viewControllers = @[main, second, third,fourth];
-        config.titles = @[@"首页",@"消息", @"新闻", @"设置"];
+        config.titles = @[@"首页",@"消息", @"发现", @"设置"];
         config.isNavigation = NO;
         
         config.selectedImages = @[@"Firstselected", @"Secondselected", @"Thirdselected",@"Fourthselected"];

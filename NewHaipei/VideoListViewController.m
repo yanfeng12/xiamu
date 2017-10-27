@@ -22,15 +22,15 @@
 @property (nonatomic, strong) UIViewController  *playerController;
 @property (nonatomic, assign) BOOL              kxResetPop;
 @property (nonatomic, strong) UISwitch          *autoPlaySwitch;
-@property (nonatomic, strong) NSMutableArray *dataSource;
+@property (nonatomic, strong) NSMutableArray *dataSource1;
 @end
 
 @implementation VideoListViewController
-- (NSMutableArray *)dataSource{
-    if (!_dataSource) {
-        _dataSource = [NSMutableArray array];
+- (NSMutableArray *)dataSource1{
+    if (!_dataSource1) {
+        _dataSource1 = [NSMutableArray array];
     }
-    return _dataSource;
+    return _dataSource1;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -16,7 +16,7 @@
 
 @interface LZNumSettingViewController ()<UITableViewDelegate,UITableViewDataSource,LZGestureViewDelegate>
 
-@property (strong, nonatomic)UITableView *tableView;
+@property (strong, nonatomic)UITableView *tableView1;
 @end
 
 @implementation LZNumSettingViewController
@@ -53,14 +53,14 @@
     }];
 }
 
-- (UITableView *)tableView {
-    if (_tableView == nil) {
+- (UITableView *)tableView1 {
+    if (_tableView1 == nil) {
         UITableView *table = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         
         table.delegate = self;
         table.dataSource = self;
         [self.view addSubview:table];
-        _tableView = table;
+        _tableView1 = table;
         
         [table mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.and.bottom.mas_equalTo(self.view);
@@ -68,7 +68,7 @@
         }];
     }
     
-    return _tableView;
+    return _tableView1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

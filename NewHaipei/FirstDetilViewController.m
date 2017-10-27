@@ -12,7 +12,7 @@
 #import "LZSqliteTool.h"
 @interface FirstDetilViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) NSMutableArray *dataArray;
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UITableView *tableView1;
 
 
 @end
@@ -79,19 +79,19 @@
     return _dataArray;
 }
 
-- (UITableView *)tableView {
+- (UITableView *)tableView1 {
     
-    if (_tableView == nil) {
+    if (_tableView1 == nil) {
         
-        _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
+        _tableView1 = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView1.delegate = self;
+        _tableView1.dataSource = self;
         
-        _tableView.tableFooterView = [UIView new];
-        [self.view addSubview:_tableView];
+        _tableView1.tableFooterView = [UIView new];
+        [self.view addSubview:_tableView1];
         
         LZWeakSelf(ws)
-        [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        [_tableView1 mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(ws.view).offset(LZNavigationHeight);
             make.left.right.and.mas_equalTo(ws.view);
             make.bottom.mas_equalTo(ws.view);
@@ -99,7 +99,7 @@
         
     }
     
-    return _tableView;
+    return _tableView1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
