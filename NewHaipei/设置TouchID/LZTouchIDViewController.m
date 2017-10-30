@@ -9,9 +9,9 @@
 #import "LZTouchIDViewController.h"
 #import "TouchIdUnlock.h"
 
-@interface LZTouchIDViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface LZTouchIDViewController ()
 {
-    UITableView *_tableView;
+    
 }
 @end
 
@@ -34,19 +34,9 @@
 }
 
 - (void)setupUI {
-    
-    _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    _tableView.separatorColor = [UIColor clearColor];
-    
-    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"touchIDCell"];
-    
-    _tableView.dataSource = self;
-    _tableView.delegate = self;
-    
-    [self.view addSubview:_tableView];
-    
-    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.view addSubview:self.tableView];
+    [self registerCellWithClass:@"touchIDCell" tableView:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.and.bottom.mas_equalTo(self.view);
         make.top.mas_equalTo(self.view).offset(LZNavigationHeight);
     }];

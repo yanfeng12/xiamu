@@ -6,17 +6,17 @@
 //  Copyright © 2016年 Artup. All rights reserved.
 //
 
-#import "LZBaseViewController.h"
+#import "LZBaseViewController2.h"
 #import "AppDelegate.h"
 
-@interface LZBaseViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface LZBaseViewController2 ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong)UIView *customNavigationView;
 @property (nonatomic,copy)lzButtonBlock leftButtonAction;
 @property (nonatomic,copy)lzButtonBlock rightButtonAction;
 @end
 
-@implementation LZBaseViewController
+@implementation LZBaseViewController2
 
 - (void)dealloc {
     
@@ -26,18 +26,18 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-//    LZLog(@">>%@",self.navigationController.viewControllers);
-//    if (self.navigationController.viewControllers.count > 0) {
-//        
-//        AppDelegate *del = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//        
-//        del.sideMenu.panMode = MFSideMenuPanModeDefault;
-//    } else {
-//        
-//        AppDelegate *del = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-//        
-//        del.sideMenu.panMode = MFSideMenuPanModeSideMenu;
-//    }
+    //    LZLog(@">>%@",self.navigationController.viewControllers);
+    //    if (self.navigationController.viewControllers.count > 0) {
+    //
+    //        AppDelegate *del = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    //
+    //        del.sideMenu.panMode = MFSideMenuPanModeDefault;
+    //    } else {
+    //
+    //        AppDelegate *del = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    //
+    //        del.sideMenu.panMode = MFSideMenuPanModeSideMenu;
+    //    }
 }
 
 - (void)viewDidLoad {
@@ -51,7 +51,7 @@
 - (void)createCustomView {
     
     UIView *bgView = [UIView new];
-//    bgView.backgroundColor = LZColorFromHex(0x0075a9);
+    //    bgView.backgroundColor = LZColorFromHex(0x0075a9);
     bgView.backgroundColor = LZColorBase;
     [self.view addSubview:bgView];
     self.customNavigationView = bgView;
@@ -62,14 +62,14 @@
         make.height.mas_equalTo(64);
     }];
     
-//    UIView *line = [UIView new];
-//    line.backgroundColor = [UIColor blackColor];
-//    [bgView addSubview:line];
-//    
-//    [line mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.left.right.and.bottom.mas_equalTo(bgView);
-//        make.height.mas_equalTo(@1);
-//    }];
+    //    UIView *line = [UIView new];
+    //    line.backgroundColor = [UIColor blackColor];
+    //    [bgView addSubview:line];
+    //
+    //    [line mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.left.right.and.bottom.mas_equalTo(bgView);
+    //        make.height.mas_equalTo(@1);
+    //    }];
     
     UILabel *titleLabel = [UILabel new];
     titleLabel.textColor = [UIColor whiteColor];
@@ -83,8 +83,8 @@
         make.centerY.mas_equalTo(bgView.mas_centerY).offset(10);
     }];
     
-//    titleLabel.text = @"首页";
-//    titleLabel.backgroundColor = [UIColor greenColor];
+    //    titleLabel.text = @"首页";
+    //    titleLabel.backgroundColor = [UIColor greenColor];
     [titleLabel sizeToFit];
 }
 
@@ -169,10 +169,10 @@
 
 -(UITableView *)tableView{
     if (_tableView==nil) {
-        _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        _tableView = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-//        _tableView.backgroundColor = [UIColor whiteColor];
+        //        _tableView.backgroundColor = [UIColor whiteColor];
         _tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
         _tableView.tableFooterView = [UIView new];
     }
@@ -212,13 +212,14 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end
+

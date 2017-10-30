@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Artup. All rights reserved.
 //
 
-#import "LZBaseViewController.h"
+#import "LZBaseViewController2.h"
 
-@interface LZGestureIntroduceViewController : LZBaseViewController
+@interface LZGestureIntroduceViewController : LZBaseViewController2
 
 @end

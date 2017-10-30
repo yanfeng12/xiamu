@@ -8,8 +8,7 @@
 
 #import "iCloudViewController.h"
 
-@interface iCloudViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (strong, nonatomic)UITableView *tableView1;
+@interface iCloudViewController ()
 @end
 
 @implementation iCloudViewController
@@ -18,7 +17,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self setupNaviBar];
-    [self tableView];
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.and.bottom.mas_equalTo(self.view);
+        make.top.mas_equalTo(self.view).offset(LZNavigationHeight);
+    }];
 }
 - (void)setupNaviBar {
     
@@ -28,24 +31,6 @@
         
         [ws.navigationController popViewControllerAnimated:YES];
     }];
-}
-
-- (UITableView *)tableView1 {
-    if (_tableView1 == nil) {
-        UITableView *table = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-        
-        table.delegate = self;
-        table.dataSource = self;
-        [self.view addSubview:table];
-        _tableView1 = table;
-        
-        [table mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.and.bottom.mas_equalTo(self.view);
-            make.top.mas_equalTo(self.view).offset(LZNavigationHeight);
-        }];
-    }
-    
-    return _tableView1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     

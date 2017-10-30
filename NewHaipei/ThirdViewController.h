@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LZBaseViewController.h"
-@interface ThirdViewController : LZBaseViewController
+#import "LZBaseViewController2.h"
+@interface ThirdViewController : LZBaseViewController2
 
 @end

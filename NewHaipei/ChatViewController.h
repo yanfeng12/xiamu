@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LZBaseViewController.h"
-@interface ChatViewController : LZBaseViewController
+#import "LZBaseViewController2.h"
+@interface ChatViewController : LZBaseViewController2
 
 @end

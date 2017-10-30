@@ -12,12 +12,11 @@
 #import "GPLActivity.h"
 #import "WeiboActivity.h"
 #import "LaunchController.h"
-@interface FirstViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface FirstViewController ()
 {
     NSArray *tittleArr;
     NSArray *imgArr;
 }
-@property (strong, nonatomic)UITableView *myTableView;
 @property (nonatomic, strong) WeiboActivity *weiboActivity;
 @end
 
@@ -58,11 +57,13 @@
     NSArray *bookArr3 = [NSArray arrayWithObjects:@"10.jpg", @"11.jpg",@"12.jpg",@"13.jpg",@"14.jpg", nil];
     imgArr = [NSArray arrayWithObjects:bookArr1,bookArr2,bookArr3, nil];
     
-    [self myTableView];
-    
-    //设置启动页
-//    [self addADLaunchController];
-    
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view).offset(LZNavigationHeight);
+        make.left.right.and.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.view).offset(-LZTabBarHeight);
+    }];
+    [self registerCellWithNib:@"FirstViewTableViewCell" tableView:self.tableView];
 }
 
 #pragma mark --自定义Activity
@@ -111,32 +112,6 @@
     [SVProgressHUD showSuccessWithStatus:[NSString stringWithFormat:@"%@",assid]];
 
 }
-- (UITableView *)myTableView {
-    if (_myTableView == nil) {
-        UITableView *table = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
-        table.delegate = self;
-        table.dataSource = self;
-        
-        // 注册FirstViewTableViewCell
-        [table registerNib:[UINib nibWithNibName:@"FirstViewTableViewCell" bundle:nil] forCellReuseIdentifier:@"mytableCell"];
-        //设置estimatedRowHeight属性默认值
-        table.estimatedRowHeight = 44.0;
-        //rowHeight属性设置为UITableViewAutomaticDimension
-        table.rowHeight = UITableViewAutomaticDimension;
-        
-        [self.view addSubview:table];
-        _myTableView = table;
-        
-        
-        [table mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.view).offset(LZNavigationHeight);
-            make.left.right.and.mas_equalTo(self.view);
-            make.bottom.mas_equalTo(self.view).offset(-LZTabBarHeight);
-        }];
-    }
-    
-    return _myTableView;
-}
 - (void)setupNaviBar {
     [self lzSetNavigationTitle:@"首页"];
     
@@ -183,7 +158,7 @@
 //创建各单元显示内容(创建参数indexPath指定的单元）
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    FirstViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mytableCell" forIndexPath:indexPath];
+    FirstViewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FirstViewTableViewCell" forIndexPath:indexPath];
     //下面这两个语句一定要添加，否则第一屏显示的collection view尺寸，以及里面的单元格位置会不正确
     cell.frame = tableView.bounds;
     [cell layoutIfNeeded];

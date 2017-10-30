@@ -17,8 +17,7 @@
 #import "LZNumSettingViewController.h"
 #import "LZGestureSetupViewController.h"
 #import "VideoListViewController.h"
-@interface FourthViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (strong, nonatomic)UITableView *myTableView;
+@interface FourthViewController ()
 @property (strong, nonatomic)NSMutableArray *dataArray;
 @end
 
@@ -30,7 +29,13 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     [self lzSetNavigationTitle:@"设置"];
-    [self myTableView];
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view).offset(LZNavigationHeight);
+        make.left.right.and.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.view).offset(-LZTabBarHeight);
+    }];
+
 }
 - (NSMutableArray *)dataArray {
     if (_dataArray == nil) {
@@ -50,26 +55,6 @@
     }
     
     return _dataArray;
-}
-
-- (UITableView *)myTableView {
-    if (_myTableView == nil) {
-        UITableView *table = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-        table.delegate = self;
-        table.dataSource = self;
-        
-        [self.view addSubview:table];
-        _myTableView = table;
-        
-        
-        [table mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.view).offset(LZNavigationHeight);
-            make.left.right.and.mas_equalTo(self.view);
-            make.bottom.mas_equalTo(self.view).offset(-LZTabBarHeight);
-        }];
-    }
-    
-    return _myTableView;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSArray *arr = self.dataArray[section];

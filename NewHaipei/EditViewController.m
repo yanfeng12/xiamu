@@ -12,13 +12,12 @@
 #import "RemarkTableViewCell.h"
 
 #import "LZSqliteTool.h"
-@interface EditViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface EditViewController ()
 {
     LZGroupModel *_groupModel;
     
     UITextView *_textView;
 }
-@property (strong, nonatomic)UITableView *myTableView;
 @property (strong, nonatomic)NSMutableArray *dataArray;
 @property (strong, nonatomic)NSArray *titleArray;
 @end
@@ -31,8 +30,13 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupNaviBar];
 
-    
-    [self myTableView];
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view).offset(LZNavigationHeight);
+        make.left.right.and.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.view).offset(0);
+    }];
+    [self registerCellWithClass:@"passwordCell" tableView:self.tableView];
     
     [self titleArray];
     [self dataArray];
@@ -87,10 +91,10 @@
         model = [[LZDataModel alloc]init];
     }
     
-    DetailTableViewCell *cell0 = [self.myTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    DetailTableViewCell *cell0 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     model.userName = cell0.detailField.text;
     
-    DetailTableViewCell *cell1 = [self.myTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    DetailTableViewCell *cell1 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
     model.nickName = cell1.detailField.text;
     
     if (model.nickName.length <= 0) {
@@ -99,16 +103,16 @@
         return;
     }
     
-    PasswordTableViewCell *cell2 = [self.myTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+    PasswordTableViewCell *cell2 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
     model.password = cell2.detailField.text;
     
-    DetailTableViewCell *cell3 = [self.myTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
+    DetailTableViewCell *cell3 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
     model.urlString = cell3.detailField.text;
     
-    DetailTableViewCell *cell4 = [self.myTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]];
+    DetailTableViewCell *cell4 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:4 inSection:0]];
     model.email = cell4.detailField.text;
     
-    DetailTableViewCell *cell5 = [self.myTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]];
+    DetailTableViewCell *cell5 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:5 inSection:0]];
     model.groupName = cell5.detailField.text;
     
     if (_groupModel) {
@@ -125,7 +129,7 @@
         model.groupID = LZSqliteGroupID;
     }
     
-    RemarkTableViewCell *cell6 = [self.myTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:6 inSection:0]];
+    RemarkTableViewCell *cell6 = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:6 inSection:0]];
     model.dsc = cell6.textView.text;
     
     NSString *message = nil;
@@ -169,27 +173,6 @@
     }
     
     return _dataArray;
-}
-- (UITableView *)myTableView {
-    if (_myTableView == nil) {
-        UITableView *table = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-        table.delegate = self;
-        table.dataSource = self;
-        
-        [table setKeyboardDismissMode:UIScrollViewKeyboardDismissModeOnDrag];
-        
-        [self.view addSubview:table];
-        _myTableView = table;
-        
-        LZWeakSelf(ws)
-        [table mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.and.bottom.mas_equalTo(ws.view);
-            make.top.mas_equalTo(ws.view).offset(LZNavigationHeight);
-        }];
-    }
-    
-    
-    return _myTableView;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     

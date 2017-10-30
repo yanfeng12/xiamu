@@ -11,9 +11,7 @@
 #import "Messageitem.h"
 
 #import "UITableView+SDAutoTableViewCellHeight.h"
-@interface ChatViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (strong, nonatomic)UITableView *myTableView;
-@property (strong, nonatomic)NSMutableArray *dataArray;
+@interface ChatViewController ()
 
 @property (strong, nonatomic)NSArray *namesArray;
 @property (strong, nonatomic)NSArray *iconNamesArray;
@@ -25,11 +23,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _dataArray = [[NSMutableArray alloc]init];
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self myTableView];
+    [self.view addSubview:self.tableView];
+    self.tableView.scrollEnabled = YES;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
+    [self registerCellWithClass:@"ChatViewCell" tableView:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view).offset(LZNavigationHeight);
+        make.left.right.and.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.view).offset(-LZTabBarHeight);
+    }];
+    
     [self setupNaviBar];
     
     [self namesArray];
@@ -152,44 +159,20 @@
         
         
         model.text = _messagesArray[randomMessagesArray];;
-        [self.dataArray addObject:model];
+        [self.dataSource addObject:model];
     }
 }
 
-- (UITableView *)myTableView {
-    if (_myTableView == nil) {
-        UITableView *table = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
-        table.delegate = self;
-        table.dataSource = self;
-
-        table.scrollEnabled = YES;
-        table.separatorStyle = UITableViewCellSeparatorStyleNone;
-        // 注册NewsTableViewCell
-
-        [table registerClass:[ChatViewCell class] forCellReuseIdentifier:@"ChatViewCell"];
-        [self.view addSubview:table];
-        _myTableView = table;
-        
-        
-        [table mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(self.view).offset(LZNavigationHeight);
-            make.left.right.and.mas_equalTo(self.view);
-            make.bottom.mas_equalTo(self.view).offset(-LZTabBarHeight);
-        }];
-    }
-    
-    return _myTableView;
-}
 //返回表格行数
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _dataArray.count;
+    return self.dataSource.count;
 }
 //创建各单元显示内容(创建参数indexPath指定的单元）
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ChatViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChatViewCell" forIndexPath:indexPath];
     
-    cell.model = self.dataArray[indexPath.row];
+    cell.model = self.dataSource[indexPath.row];
     
     __weak typeof(self) weakSelf = self;
     [cell setDidSelectLinkTextOperationBlock:^(NSString *link, MLEmojiLabelLinkType type) {
@@ -209,7 +192,7 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat h = [self.myTableView cellHeightForIndexPath:indexPath model:self.dataArray[indexPath.row] keyPath:@"model" cellClass:[ChatViewCell class] contentViewWidth:[UIScreen mainScreen].bounds.size.width];
+    CGFloat h = [self.tableView cellHeightForIndexPath:indexPath model:self.dataSource[indexPath.row] keyPath:@"model" cellClass:[ChatViewCell class] contentViewWidth:[UIScreen mainScreen].bounds.size.width];
     return h;
 }
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath

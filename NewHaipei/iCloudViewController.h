@@ -6,9 +6,9 @@
 //  Copyright © 2017年 guopenglai. All rights reserved.
 //
 
-#import "LZBaseViewController.h"
+#import "LZBaseViewController2.h"
 #import "LZiCloud.h"
 #import "LZSqliteTool.h"
-@interface iCloudViewController : LZBaseViewController
+@interface iCloudViewController : LZBaseViewController2
 
 @end

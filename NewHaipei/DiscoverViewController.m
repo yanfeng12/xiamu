@@ -11,11 +11,10 @@
 #import "PersonCenterCell.h"
 #import "GPLTimeLineViewController.h"
 #import "ThirdViewController.h"
-@interface DiscoverViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface DiscoverViewController ()
 {
     
 }
-@property(nonatomic,strong)UITableView *discoverTable;
 ///强引用朋友圈VC，做到像微信朋友圈一样，再次进入朋友圈依然显示上次浏览的位置
 @property(nonatomic,strong)GPLTimeLineViewController *timeLineVC;
 @end
@@ -25,13 +24,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.view addSubview:self.discoverTable];
+    [self.view addSubview:self.tableView];
     [self lzSetNavigationTitle:@"发现"];
-    [self.discoverTable mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.view).offset(LZNavigationHeight);
         make.left.right.and.mas_equalTo(self.view);
         make.bottom.mas_equalTo(self.view).offset(-LZTabBarHeight);
     }];
+    [self registerCellWithNib:@"PersonCenterCell" tableView:self.tableView];
+   // [self registerCellWithClass:@"PersonCenterCell" tableView:self.tableView];
 }
 #pragma mark 懒加载朋友圈
 -(GPLTimeLineViewController *)timeLineVC;
@@ -40,15 +41,6 @@
         _timeLineVC = [[GPLTimeLineViewController alloc]init];
     }
     return _timeLineVC;
-}
--(UITableView *)discoverTable{
-    if (_discoverTable==nil) {
-        _discoverTable = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-        _discoverTable.delegate = self;
-        _discoverTable.dataSource = self;
-        [_discoverTable registerNib:[UINib nibWithNibName:@"PersonCenterCell" bundle:nil] forCellReuseIdentifier:@"PersonCenterCell"];
-    }
-    return _discoverTable;
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 4;

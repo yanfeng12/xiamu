@@ -25,6 +25,7 @@ NSString const * _Nonnull appID = @"1184694298";
     // Do any additional setup after loading the view.
     [self setupNaviBar];
     [self setupUI];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 - (void)setupNaviBar {
     

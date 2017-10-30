@@ -195,6 +195,7 @@
 		B95D0C011EA9A8EF001DCBC8 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B95D0BFB1EA9A8EF001DCBC8 /* libswresample.a */; };
 		B95D0C021EA9A8EF001DCBC8 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B95D0BFC1EA9A8EF001DCBC8 /* libswscale.a */; };
 		B95D0C041EA9B595001DCBC8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B95D0C031EA9B595001DCBC8 /* libz.tbd */; };
+		B96457221FA6F03C00758E74 /* LZBaseViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = B96457211FA6F03C00758E74 /* LZBaseViewController2.m */; };
 		B96A01921EA48E2600C1F612 /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B96A01841EA48E2600C1F612 /* 0.jpg */; };
 		B96A01931EA48E2600C1F612 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B96A01851EA48E2600C1F612 /* 1.jpg */; };
 		B96A01941EA48E2600C1F612 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B96A01861EA48E2600C1F612 /* 10.jpg */; };
@@ -1198,6 +1199,8 @@
 		B95D0BFB1EA9A8EF001DCBC8 /* libswresample.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswresample.a; sourceTree = "<group>"; };
 		B95D0BFC1EA9A8EF001DCBC8 /* libswscale.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libswscale.a; sourceTree = "<group>"; };
 		B95D0C031EA9B595001DCBC8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		B96457201FA6F03C00758E74 /* LZBaseViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZBaseViewController2.h; sourceTree = "<group>"; };
+		B96457211FA6F03C00758E74 /* LZBaseViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LZBaseViewController2.m; sourceTree = "<group>"; };
 		B96A01841EA48E2600C1F612 /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
 		B96A01851EA48E2600C1F612 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		B96A01861EA48E2600C1F612 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
@@ -3565,6 +3568,8 @@
 				B9872B8A1E9E19FE00ABAF69 /* LZBaseTableViewCell.m */,
 				B9872B8B1E9E19FE00ABAF69 /* LZBaseViewController.h */,
 				B9872B8C1E9E19FE00ABAF69 /* LZBaseViewController.m */,
+				B96457201FA6F03C00758E74 /* LZBaseViewController2.h */,
+				B96457211FA6F03C00758E74 /* LZBaseViewController2.m */,
 			);
 			path = "配置文件";
 			sourceTree = "<group>";
@@ -5913,6 +5918,7 @@
 				B9966BDD1FA2FF430073EB56 /* RFRecordButton.m in Sources */,
 				B972C18E1EA75CF900BD92DA /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				B952A1121EA081FC00D7B2EF /* SDWebImageDownloader.m in Sources */,
+				B96457221FA6F03C00758E74 /* LZBaseViewController2.m in Sources */,
 				B9966C501FA311410073EB56 /* UIScrollView+YYAdd.m in Sources */,
 				B9966C431FA311410073EB56 /* NSTimer+YYAdd.m in Sources */,
 				B952A0841EA07B3D00D7B2EF /* UIImageView+AFNetworking.m in Sources */,

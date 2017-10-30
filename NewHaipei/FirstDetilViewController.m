@@ -10,9 +10,7 @@
 #import "EditViewController.h"
 #import "LZDataModel.h"
 #import "LZSqliteTool.h"
-@interface FirstDetilViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic, strong) NSMutableArray *dataArray;
-@property (nonatomic, strong) UITableView *tableView1;
+@interface FirstDetilViewController ()
 
 
 @end
@@ -26,12 +24,12 @@
     
     NSArray* array = [LZSqliteTool LZSelectGroupElementsFromTable:LZSqliteDataTableName groupID:LZSqliteGroupID];
     
-    if (self.dataArray.count > 0) {
+    if (self.dataSource.count > 0) {
         
-        [self.dataArray removeAllObjects];
+        [self.dataSource removeAllObjects];
     }
     
-    [self.dataArray addObjectsFromArray:array];
+    [self.dataSource addObjectsFromArray:array];
     
     [self.tableView reloadData];
 }
@@ -48,7 +46,12 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupNaviBar];
     
-    [self tableView];
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(self.view).offset(LZNavigationHeight);
+        make.left.right.and.mas_equalTo(self.view);
+        make.bottom.mas_equalTo(self.view).offset(0);
+    }];
 }
 - (void)setupNaviBar {
     [self lzSetNavigationTitle:@"数据库测试"];
@@ -69,41 +72,9 @@
     }];
     
 }
-- (NSMutableArray *)dataArray {
-    
-    if (_dataArray == nil) {
-        
-        _dataArray = [NSMutableArray arrayWithCapacity:0];
-    }
-    
-    return _dataArray;
-}
-
-- (UITableView *)tableView1 {
-    
-    if (_tableView1 == nil) {
-        
-        _tableView1 = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView1.delegate = self;
-        _tableView1.dataSource = self;
-        
-        _tableView1.tableFooterView = [UIView new];
-        [self.view addSubview:_tableView1];
-        
-        LZWeakSelf(ws)
-        [_tableView1 mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(ws.view).offset(LZNavigationHeight);
-            make.left.right.and.mas_equalTo(ws.view);
-            make.bottom.mas_equalTo(ws.view);
-        }];
-        
-    }
-    
-    return _tableView1;
-}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.dataArray.count;
+    return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -119,7 +90,7 @@
         cell.textLabel.font = LZFontDefaulte;
     }
     
-    LZDataModel *model = self.dataArray[indexPath.row];
+    LZDataModel *model = self.dataSource[indexPath.row];
     cell.textLabel.text = model.nickName;
     cell.detailTextLabel.text = model.dsc;
     return cell;
@@ -138,8 +109,8 @@
     LZWeakSelf(ws)
     UIAlertAction *ok = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
-        [LZSqliteTool LZDeleteFromTable:LZSqliteDataTableName element:[ws.dataArray objectAtIndex:indexPath.row]];
-        [ws.dataArray removeObjectAtIndex:indexPath.row];
+        [LZSqliteTool LZDeleteFromTable:LZSqliteDataTableName element:[ws.dataSource objectAtIndex:indexPath.row]];
+        [ws.dataSource removeObjectAtIndex:indexPath.row];
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         

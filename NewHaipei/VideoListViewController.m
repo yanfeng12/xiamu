@@ -16,34 +16,32 @@
 #import <AVKit/AVKit.h>
 #import "MMovieModel.h"
 #import "KxMovieViewController.h"
-@interface VideoListViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (strong, nonatomic)UITableView *myTableView;
-@property (strong, nonatomic)NSMutableArray *dataArray;
+@interface VideoListViewController ()
 @property (nonatomic, strong) UIViewController  *playerController;
 @property (nonatomic, assign) BOOL              kxResetPop;
 @property (nonatomic, strong) UISwitch          *autoPlaySwitch;
-@property (nonatomic, strong) NSMutableArray *dataSource1;
 @end
 
 @implementation VideoListViewController
-- (NSMutableArray *)dataSource1{
-    if (!_dataSource1) {
-        _dataSource1 = [NSMutableArray array];
-    }
-    return _dataSource1;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
     [self setupNaviBar];
-    [self myTableView];
+    [self.view addSubview:self.tableView];
+    [self registerCellWithClass:@"VideoListTableViewCell" tableView:self.tableView];
+    [self.tableView setKeyboardDismissMode:UIScrollViewKeyboardDismissModeOnDrag];
+    
+    LZWeakSelf(ws)
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.and.bottom.mas_equalTo(ws.view);
+        make.top.mas_equalTo(ws.view).offset(LZNavigationHeight);
+    }];
     
     [self operationStr];
     [self addBackgroundMethod];
     [self registerObserver];
-    
-    _dataArray = [[NSMutableArray alloc]init];
 }
 - (void)operationStr{
     
@@ -72,7 +70,7 @@
              [self transformVideoUrlFromString:videosText error:error];
             dispatch_async(dispatch_get_main_queue(), ^{
                 // 更新界面
-                [self.myTableView reloadData];
+                [self.tableView reloadData];
             });
         });
        
@@ -84,7 +82,7 @@
             NSString *videosText = [NSString stringWithContentsOfURL:[NSURL URLWithString:filePath] encoding:NSUTF8StringEncoding error:&error];
             [self transformVideoUrlFromString:videosText error:error];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self.myTableView reloadData];
+                [self.tableView reloadData];
             });
         });
     }
@@ -129,8 +127,8 @@
                 itemArray = [self checkMultipleUrlInOneUrlWithUrl:[subStrArray lastObject] videoName:[subStrArray firstObject] itemArray:itemArray];
             }
         }
-        [self.dataArray addObjectsFromArray:itemArray];
-        NSLog(@"self.dataArray==========%@",self.dataArray);
+        [self.dataSource addObjectsFromArray:itemArray];
+        NSLog(@"self.dataSource==========%@",self.dataSource);
     }else {
         NSLog(@"error %@", error);
     }
@@ -216,29 +214,6 @@
     }];
     
 }
-- (UITableView *)myTableView {
-    if (_myTableView == nil) {
-        UITableView *table = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
-        table.delegate = self;
-        table.dataSource = self;
-        
-        [table registerClass:[VideoListTableViewCell class] forCellReuseIdentifier:@"VideoCell"];
-        
-        [table setKeyboardDismissMode:UIScrollViewKeyboardDismissModeOnDrag];
-        
-        [self.view addSubview:table];
-        _myTableView = table;
-        
-        LZWeakSelf(ws)
-        [table mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.and.bottom.mas_equalTo(ws.view);
-            make.top.mas_equalTo(ws.view).offset(LZNavigationHeight);
-        }];
-    }
-    
-    
-    return _myTableView;
-}
 #pragma mark -- 添加后台方法
 - (void)addBackgroundMethod{
     AVAudioSession *session = [AVAudioSession sharedInstance];
@@ -252,17 +227,17 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.dataArray.count;
+    return self.dataSource.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 90;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    VideoListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VideoCell" forIndexPath:indexPath];
+    VideoListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VideoListTableViewCell" forIndexPath:indexPath];
     
-    if (indexPath.row < [self.dataArray count]) {
-        MMovieModel *model =  self.dataArray[indexPath.row];
+    if (indexPath.row < [self.dataSource count]) {
+        MMovieModel *model =  self.dataSource[indexPath.row];
         [cell setObject:model];
         cell.nameLabel.text = [NSString stringWithFormat:@"%@-%@",@(indexPath.row+1), model.title];
         [cell checkIsCanPlay:cell.urlLabel.text fileName:self.dict[@"title"]];
@@ -270,18 +245,18 @@
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row < [self.dataArray count]) {
+    if (indexPath.row < [self.dataSource count]) {
         
         VideoListTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         if (![tableView.visibleCells containsObject:cell]) {
-            if ((indexPath.row+2) < [self.dataArray count]) {
+            if ((indexPath.row+2) < [self.dataSource count]) {
                 [tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:(indexPath.row+2) inSection:indexPath.section] atScrollPosition:UITableViewScrollPositionNone animated:YES];
             }else {
                 [tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:(indexPath.row) inSection:indexPath.section] atScrollPosition:UITableViewScrollPositionNone animated:YES];
             }
         }
         
-        MMovieModel *model =  self.dataArray[indexPath.row];
+        MMovieModel *model =  self.dataSource[indexPath.row];
         NSString *videoName = model.title;
         NSString *movieUrl = [model.url stringByReplacingOccurrencesOfString:@"[url]" withString:@""];
         
@@ -293,12 +268,12 @@
 }
 
 -(void)viewDidLayoutSubviews {
-    if ([self.myTableView respondsToSelector:@selector(setSeparatorInset:)]) {
-        [self.myTableView setSeparatorInset:UIEdgeInsetsZero];
+    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.tableView setSeparatorInset:UIEdgeInsetsZero];
         
     }
-    if ([self.myTableView respondsToSelector:@selector(setLayoutMargins:)])  {
-        [self.myTableView setLayoutMargins:UIEdgeInsetsZero];
+    if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)])  {
+        [self.tableView setLayoutMargins:UIEdgeInsetsZero];
     }
 }
 
@@ -386,7 +361,7 @@
         
         vc.playCallBack = ^(NSError *error , BOOL success){
             if (success) {
-                VideoListTableViewCell *ttcell = [mySelf.myTableView cellForRowAtIndexPath:indexPath];
+                VideoListTableViewCell *ttcell = [mySelf.tableView cellForRowAtIndexPath:indexPath];
                 if (ttcell.canPlayLabel.hidden || !ttcell.canPlayLabel) {
                     [mySelf saveCanPlayHistory:movieStr];
                     [mySelf saveCanPlayHistoryToDocument:movieStr name:movieName];
@@ -436,7 +411,7 @@
  */
 - (void)autoPlayNextVideo:(NSIndexPath *)currentIndexPath delegate:(VideoListViewController *)vc{
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:currentIndexPath.row+1 inSection:0];
-    [vc tableView:self.myTableView didSelectRowAtIndexPath:indexPath];
+    [vc tableView:self.tableView didSelectRowAtIndexPath:indexPath];
 }
 
 /**

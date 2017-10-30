@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "LZBaseViewController.h"
-@interface FirstViewController : LZBaseViewController
+#import "LZBaseViewController2.h"
+@interface FirstViewController : LZBaseViewController2
 
 
 @end
