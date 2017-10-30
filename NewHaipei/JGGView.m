@@ -32,21 +32,21 @@
             iv.image = dataSource[i];
         }else if ([dataSource[i] isKindOfClass:[NSString class]]){
             [iv sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",dataSource[i]]] placeholderImage:[UIImage imageNamed:@"placeholder"]];
-            //            [iv setImageWithURL:[NSURL URLWithString:str]
-            //                               placeholder:nil
-            //                                   options:YYWebImageOptionProgressiveBlur | YYWebImageOptionShowNetworkActivity | YYWebImageOptionSetImageWithFadeAnimation
-            //                                  progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-            //                                      if (expectedSize > 0 && receivedSize > 0) {
-            //                                          CGFloat progress = (CGFloat)receivedSize / expectedSize;
-            //                                          progress = progress < 0 ? 0 : progress > 1 ? 1 : progress;
-            //
-            //                                      }
-            //                                  } transform:nil
-            //                                completion:^(UIImage *image, NSURL *url, YYWebImageFromType from, YYWebImageStage stage, NSError *error) {
-            //                                    if (stage == YYWebImageStageFinished) {
-            //
-            //                                    }
-            //                                }];
+//            [iv setImageWithURL:[NSURL URLWithString:str]
+//                               placeholder:nil
+//                                   options:YYWebImageOptionProgressiveBlur | YYWebImageOptionShowNetworkActivity | YYWebImageOptionSetImageWithFadeAnimation
+//                                  progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+//                                      if (expectedSize > 0 && receivedSize > 0) {
+//                                          CGFloat progress = (CGFloat)receivedSize / expectedSize;
+//                                          progress = progress < 0 ? 0 : progress > 1 ? 1 : progress;
+//
+//                                      }
+//                                  } transform:nil
+//                                completion:^(UIImage *image, NSURL *url, YYWebImageFromType from, YYWebImageStage stage, NSError *error) {
+//                                    if (stage == YYWebImageStageFinished) {
+//
+//                                    }
+//                                }];
             
             
         }else if ([dataSource[i] isKindOfClass:[NSURL class]]){

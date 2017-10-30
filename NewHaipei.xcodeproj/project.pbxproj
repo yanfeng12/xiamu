@@ -196,6 +196,8 @@
 		B95D0C021EA9A8EF001DCBC8 /* libswscale.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B95D0BFC1EA9A8EF001DCBC8 /* libswscale.a */; };
 		B95D0C041EA9B595001DCBC8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B95D0C031EA9B595001DCBC8 /* libz.tbd */; };
 		B96457221FA6F03C00758E74 /* LZBaseViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = B96457211FA6F03C00758E74 /* LZBaseViewController2.m */; };
+		B96457291FA6FAEC00758E74 /* niconiconi@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = B96457241FA6FAEB00758E74 /* niconiconi@2x.gif */; };
+		B964572B1FA6FAEC00758E74 /* UIView+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = B96457281FA6FAEB00758E74 /* UIView+YYAdd.m */; };
 		B96A01921EA48E2600C1F612 /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B96A01841EA48E2600C1F612 /* 0.jpg */; };
 		B96A01931EA48E2600C1F612 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B96A01851EA48E2600C1F612 /* 1.jpg */; };
 		B96A01941EA48E2600C1F612 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B96A01861EA48E2600C1F612 /* 10.jpg */; };
@@ -1201,6 +1203,9 @@
 		B95D0C031EA9B595001DCBC8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B96457201FA6F03C00758E74 /* LZBaseViewController2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LZBaseViewController2.h; sourceTree = "<group>"; };
 		B96457211FA6F03C00758E74 /* LZBaseViewController2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LZBaseViewController2.m; sourceTree = "<group>"; };
+		B96457241FA6FAEB00758E74 /* niconiconi@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "niconiconi@2x.gif"; sourceTree = "<group>"; };
+		B96457271FA6FAEB00758E74 /* UIView+YYAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YYAdd.h"; sourceTree = "<group>"; };
+		B96457281FA6FAEB00758E74 /* UIView+YYAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YYAdd.m"; sourceTree = "<group>"; };
 		B96A01841EA48E2600C1F612 /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
 		B96A01851EA48E2600C1F612 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		B96A01861EA48E2600C1F612 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
@@ -2102,6 +2107,7 @@
 			children = (
 				B9105C321EA5FE4400A6C24E /* AboutViewController.h */,
 				B9105C331EA5FE4400A6C24E /* AboutViewController.m */,
+				B96457231FA6FAEB00758E74 /* Animation control */,
 			);
 			name = "关于";
 			sourceTree = "<group>";
@@ -2942,6 +2948,16 @@
 				B95D0BFC1EA9A8EF001DCBC8 /* libswscale.a */,
 			);
 			path = lib;
+			sourceTree = "<group>";
+		};
+		B96457231FA6FAEB00758E74 /* Animation control */ = {
+			isa = PBXGroup;
+			children = (
+				B96457241FA6FAEB00758E74 /* niconiconi@2x.gif */,
+				B96457271FA6FAEB00758E74 /* UIView+YYAdd.h */,
+				B96457281FA6FAEB00758E74 /* UIView+YYAdd.m */,
+			);
+			path = "Animation control";
 			sourceTree = "<group>";
 		};
 		B96A01831EA48E2600C1F612 /* books */ = {
@@ -5492,6 +5508,7 @@
 				B96A01961EA48E2600C1F612 /* 12.jpg in Resources */,
 				B9966B1E1FA2FF420073EB56 /* f_static_023@2x.png in Resources */,
 				B9966B7C1FA2FF420073EB56 /* f_static_070@2x.png in Resources */,
+				B96457291FA6FAEC00758E74 /* niconiconi@2x.gif in Resources */,
 				B96A01D21EA48F3100C1F612 /* GPL6.jpg in Resources */,
 				B9966AD61FA2FF420073EB56 /* input-bar-flat@3x.png in Resources */,
 				B9966B0B1FA2FF420073EB56 /* f_static_013@3x.png in Resources */,
@@ -6098,6 +6115,7 @@
 				B952A1621EA0A01B00D7B2EF /* NewsTool.m in Sources */,
 				B9CE168C1EAB38DA00F7CA6D /* UIImage+Size.m in Sources */,
 				B9966C481FA311410073EB56 /* UIBezierPath+YYAdd.m in Sources */,
+				B964572B1FA6FAEC00758E74 /* UIView+YYAdd.m in Sources */,
 				B952A0821EA07B3D00D7B2EF /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				B94D68211E9F4D2A00A781E3 /* FirstViewTableViewCell.m in Sources */,
 				B952A1101EA081FC00D7B2EF /* SDWebImageCompat.m in Sources */,
