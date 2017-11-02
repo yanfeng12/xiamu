@@ -1,6 +1,6 @@
 //
 //  YYImageCoder.m
-//  YYImage <https://github.com/ibireme/YYImage>
+//  YYKit <https://github.com/ibireme/YYKit>
 //
 //  Created by ibireme on 15/5/13.
 //  Copyright (c) 2015 ibireme.
@@ -10,7 +10,6 @@
 //
 
 #import "YYImageCoder.h"
-#import "YYImage.h"
 #import <CoreFoundation/CoreFoundation.h>
 #import <ImageIO/ImageIO.h>
 #import <Accelerate/Accelerate.h>
@@ -20,19 +19,19 @@
 #import <objc/runtime.h>
 #import <pthread.h>
 #import <zlib.h>
-
-
+#import "YYImage.h"
+#import "YYKitMacro.h"
 
 #ifndef YYIMAGE_WEBP_ENABLED
 #if __has_include(<webp/decode.h>) && __has_include(<webp/encode.h>) && \
-    __has_include(<webp/demux.h>)  && __has_include(<webp/mux.h>)
+__has_include(<webp/demux.h>)  && __has_include(<webp/mux.h>)
 #define YYIMAGE_WEBP_ENABLED 1
 #import <webp/decode.h>
 #import <webp/encode.h>
 #import <webp/demux.h>
 #import <webp/mux.h>
 #elif __has_include("webp/decode.h") && __has_include("webp/encode.h") && \
-      __has_include("webp/demux.h")  && __has_include("webp/mux.h")
+__has_include("webp/demux.h")  && __has_include("webp/mux.h")
 #define YYIMAGE_WEBP_ENABLED 1
 #import "webp/decode.h"
 #import "webp/encode.h"
@@ -1550,13 +1549,7 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
     if (scale <= 0) scale = 1;
     _scale = scale;
     _framesLock = dispatch_semaphore_create(1);
-    
-    pthread_mutexattr_t attr;
-    pthread_mutexattr_init (&attr);
-    pthread_mutexattr_settype (&attr, PTHREAD_MUTEX_RECURSIVE);
-    pthread_mutex_init (&_lock, &attr);
-    pthread_mutexattr_destroy (&attr);
-    
+    pthread_mutex_init_recursive(&_lock, true);
     return self;
 }
 
@@ -1650,7 +1643,7 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
         UIImage *image = [UIImage imageWithCGImage:imageRef scale:_scale orientation:_orientation];
         CFRelease(imageRef);
         if (!image) return nil;
-        image.yy_isDecodedForDisplay = decoded;
+        image.isDecodedForDisplay = decoded;
         frame.image = image;
         return frame;
     }
@@ -1694,7 +1687,7 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
     CFRelease(imageRef);
     if (!image) return nil;
     
-    image.yy_isDecodedForDisplay = YES;
+    image.isDecodedForDisplay = YES;
     frame.image = image;
     if (extendToCanvas) {
         frame.width = _width;
@@ -1985,7 +1978,7 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
             }
         }
     }
-
+    
     /*
      ICO, GIF, APNG may contains multi-frame.
      */
@@ -2769,8 +2762,8 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
 
 @implementation UIImage (YYImageCoder)
 
-- (instancetype)yy_imageByDecoded {
-    if (self.yy_isDecodedForDisplay) return self;
+- (instancetype)imageByDecoded {
+    if (self.isDecodedForDisplay) return self;
     CGImageRef imageRef = self.CGImage;
     if (!imageRef) return self;
     CGImageRef newImageRef = YYCGImageCreateDecodedCopy(imageRef, YES);
@@ -2778,23 +2771,23 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
     UIImage *newImage = [[self.class alloc] initWithCGImage:newImageRef scale:self.scale orientation:self.imageOrientation];
     CGImageRelease(newImageRef);
     if (!newImage) newImage = self; // decode failed, return self.
-    newImage.yy_isDecodedForDisplay = YES;
+    newImage.isDecodedForDisplay = YES;
     return newImage;
 }
 
-- (BOOL)yy_isDecodedForDisplay {
-    if (self.images.count > 1 || [self isKindOfClass:[YYSpriteSheetImage class]]) return YES;
-    NSNumber *num = objc_getAssociatedObject(self, @selector(yy_isDecodedForDisplay));
+- (BOOL)isDecodedForDisplay {
+    if (self.images.count > 1) return YES;
+    NSNumber *num = objc_getAssociatedObject(self, @selector(isDecodedForDisplay));
     return [num boolValue];
 }
 
-- (void)setYy_isDecodedForDisplay:(BOOL)isDecodedForDisplay {
-    objc_setAssociatedObject(self, @selector(yy_isDecodedForDisplay), @(isDecodedForDisplay), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setIsDecodedForDisplay:(BOOL)isDecodedForDisplay {
+    objc_setAssociatedObject(self, @selector(isDecodedForDisplay), @(isDecodedForDisplay), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (void)yy_saveToAlbumWithCompletionBlock:(void(^)(NSURL *assetURL, NSError *error))completionBlock {
+- (void)saveToAlbumWithCompletionBlock:(void(^)(NSURL *assetURL, NSError *error))completionBlock {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *data = [self _yy_dataRepresentationForSystem:YES];
+        NSData *data = [self _imageDataRepresentationForSystem:YES];
         ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
         [library writeImageDataToSavedPhotosAlbum:data metadata:nil completionBlock:^(NSURL *assetURL, NSError *error){
             if (!completionBlock) return;
@@ -2809,12 +2802,12 @@ CGImageRef YYCGImageCreateWithWebPData(CFDataRef webpData,
     });
 }
 
-- (NSData *)yy_imageDataRepresentation {
-    return [self _yy_dataRepresentationForSystem:NO];
+- (NSData *)imageDataRepresentation {
+    return [self _imageDataRepresentationForSystem:NO];
 }
 
 /// @param forSystem YES: used for system album (PNG/JPEG/GIF), NO: used for YYImage (PNG/JPEG/GIF/WebP)
-- (NSData *)_yy_dataRepresentationForSystem:(BOOL)forSystem {
+- (NSData *)_imageDataRepresentationForSystem:(BOOL)forSystem {
     NSData *data = nil;
     if ([self isKindOfClass:[YYImage class]]) {
         YYImage *image = (id)self;

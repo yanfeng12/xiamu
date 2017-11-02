@@ -656,7 +656,7 @@ static void URLInBlackListAdd(NSURL *url) {
                 BOOL hasAnimation = NO;
                 if (allowAnimation) {
                     image = [[YYImage alloc] initWithData:self.data scale:[UIScreen mainScreen].scale];
-                    if (shouldDecode) image = [image yy_imageByDecoded];
+                    if (shouldDecode) image = [image imageByDecoded];
                     if ([((YYImage *)image) animatedImageFrameCount] > 1) {
                         hasAnimation = YES;
                     }

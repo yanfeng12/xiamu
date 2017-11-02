@@ -11,6 +11,7 @@
 #import "PersonCenterCell.h"
 #import "GPLTimeLineViewController.h"
 #import "ThirdViewController.h"
+#import "WBStatusTimelineViewController.h"
 @interface DiscoverViewController ()
 {
     
@@ -88,8 +89,8 @@
         }
         
     }else if(indexPath.section==2){
-        cell.titleIV.image = [UIImage imageNamed:@"ff_IconLocationService"];
-        cell.titleLabel.text = @"附近的人";
+        cell.titleIV.image = [UIImage imageNamed:@"Weibo"];
+        cell.titleLabel.text = @"微博";
     }else if(indexPath.section==3){
         if (indexPath.row==0) {
             cell.titleIV.image = [UIImage imageNamed:@"CreditCard_ShoppingBag"];
@@ -106,6 +107,9 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section==0) {
         [self.navigationController pushViewController:[[GPLTimeLineViewController alloc]init] animated:YES];
+    }
+    if (indexPath.section==2) {
+        [self.navigationController pushViewController:[[WBStatusTimelineViewController alloc]init] animated:YES];
     }
     if (indexPath.section==3) {
         if (indexPath.row==1) {

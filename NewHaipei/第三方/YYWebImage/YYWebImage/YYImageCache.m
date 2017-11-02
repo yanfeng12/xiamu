@@ -64,7 +64,7 @@ static inline dispatch_queue_t YYImageCacheDecodeQueue() {
     UIImage *image;
     if (_allowAnimatedImage) {
         image = [[YYImage alloc] initWithData:data scale:scale];
-        if (_decodeForDisplay) image = [image yy_imageByDecoded];
+        if (_decodeForDisplay) image = [image imageByDecoded];
     } else {
         YYImageDecoder *decoder = [YYImageDecoder decoderWithData:data scale:scale];
         image = [decoder frameAtIndex:0 decodeForDisplay:_decodeForDisplay].image;
@@ -123,13 +123,13 @@ static inline dispatch_queue_t YYImageCacheDecodeQueue() {
     __weak typeof(self) _self = self;
     if (type & YYImageCacheTypeMemory) { // add to memory cache
         if (image) {
-            if (image.yy_isDecodedForDisplay) {
+            if (image.isDecodedForDisplay) {
                 [_memoryCache setObject:image forKey:key withCost:[_self imageCost:image]];
             } else {
                 dispatch_async(YYImageCacheDecodeQueue(), ^{
                     __strong typeof(_self) self = _self;
                     if (!self) return;
-                    [self.memoryCache setObject:[image yy_imageByDecoded] forKey:key withCost:[self imageCost:image]];
+                    [self.memoryCache setObject:[image imageByDecoded] forKey:key withCost:[self imageCost:image]];
                 });
             }
         } else if (imageData) {
@@ -151,7 +151,7 @@ static inline dispatch_queue_t YYImageCacheDecodeQueue() {
             dispatch_async(YYImageCacheIOQueue(), ^{
                 __strong typeof(_self) self = _self;
                 if (!self) return;
-                NSData *data = [image yy_imageDataRepresentation];
+                NSData *data = [image imageDataRepresentation];
                 [YYDiskCache setExtendedData:[NSKeyedArchiver archivedDataWithRootObject:@(image.scale)] toObject:data];
                 [self.diskCache setObject:data forKey:key];
             });

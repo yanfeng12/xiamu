@@ -1,6 +1,6 @@
 //
 //  UIImageView+YYWebImage.m
-//  YYWebImage <https://github.com/ibireme/YYWebImage>
+//  YYKit <https://github.com/ibireme/YYKit>
 //
 //  Created by ibireme on 15/2/23.
 //  Copyright (c) 2015 ibireme.
@@ -12,11 +12,10 @@
 #import "UIImageView+YYWebImage.h"
 #import "YYWebImageOperation.h"
 #import "_YYWebImageSetter.h"
+#import "YYKitMacro.h"
 #import <objc/runtime.h>
 
-// Dummy class for category
-@interface UIImageView_YYWebImage : NSObject @end
-@implementation UIImageView_YYWebImage @end
+YYSYNTH_DUMMY_CLASS(UIImageView_YYWebImage)
 
 static int _YYWebImageSetterKey;
 static int _YYWebImageHighlightedSetterKey;
@@ -26,76 +25,80 @@ static int _YYWebImageHighlightedSetterKey;
 
 #pragma mark - image
 
-- (NSURL *)yy_imageURL {
+- (NSURL *)imageURL {
     _YYWebImageSetter *setter = objc_getAssociatedObject(self, &_YYWebImageSetterKey);
     return setter.imageURL;
 }
 
-- (void)setYy_imageURL:(NSURL *)imageURL {
-    [self yy_setImageWithURL:imageURL
-                 placeholder:nil
-                     options:kNilOptions
-                     manager:nil
-                    progress:nil
-                   transform:nil
-                  completion:nil];
+/*
+ "setImageWithURL" is conflict to AFNetworking and SDWebImage...WTF!
+ So.. We use "setImageURL:" instead.
+ */
+- (void)setImageURL:(NSURL *)imageURL {
+    [self setImageWithURL:imageURL
+              placeholder:nil
+                  options:kNilOptions
+                  manager:nil
+                 progress:nil
+                transform:nil
+               completion:nil];
 }
 
-- (void)yy_setImageWithURL:(NSURL *)imageURL placeholder:(UIImage *)placeholder {
-    [self yy_setImageWithURL:imageURL
-                 placeholder:placeholder
-                     options:kNilOptions
-                     manager:nil
-                    progress:nil
-                   transform:nil
-                  completion:nil];
+- (void)setImageWithURL:(NSURL *)imageURL placeholder:(UIImage *)placeholder {
+    [self setImageWithURL:imageURL
+              placeholder:placeholder
+                  options:kNilOptions
+                  manager:nil
+                 progress:nil
+                transform:nil
+               completion:nil];
 }
 
-- (void)yy_setImageWithURL:(NSURL *)imageURL options:(YYWebImageOptions)options {
-    [self yy_setImageWithURL:imageURL
-                 placeholder:nil
-                     options:options
-                     manager:nil
-                    progress:nil
-                   transform:nil
-                  completion:nil];
+- (void)setImageWithURL:(NSURL *)imageURL options:(YYWebImageOptions)options {
+    [self setImageWithURL:imageURL
+              placeholder:nil
+                  options:options
+                  manager:nil
+                 progress:nil
+                transform:nil
+               completion:nil];
 }
 
-- (void)yy_setImageWithURL:(NSURL *)imageURL
-               placeholder:(UIImage *)placeholder
-                   options:(YYWebImageOptions)options
-                completion:(YYWebImageCompletionBlock)completion {
-    [self yy_setImageWithURL:imageURL
-                 placeholder:placeholder
-                     options:options
-                     manager:nil
-                    progress:nil
-                   transform:nil
-                  completion:completion];
+- (void)setImageWithURL:(NSURL *)imageURL
+            placeholder:(UIImage *)placeholder
+                options:(YYWebImageOptions)options
+             completion:(YYWebImageCompletionBlock)completion {
+    [self setImageWithURL:imageURL
+              placeholder:placeholder
+                  options:options
+                  manager:nil
+                 progress:nil
+                transform:nil
+               completion:completion];
 }
 
-- (void)yy_setImageWithURL:(NSURL *)imageURL
-               placeholder:(UIImage *)placeholder
-                   options:(YYWebImageOptions)options
-                  progress:(YYWebImageProgressBlock)progress
-                 transform:(YYWebImageTransformBlock)transform
-                completion:(YYWebImageCompletionBlock)completion {
-    [self yy_setImageWithURL:imageURL
-                 placeholder:placeholder
-                     options:options
-                     manager:nil
-                    progress:progress
-                   transform:transform
-                  completion:completion];
+- (void)setImageWithURL:(NSURL *)imageURL
+            placeholder:(UIImage *)placeholder
+                options:(YYWebImageOptions)options
+               progress:(YYWebImageProgressBlock)progress
+              transform:(YYWebImageTransformBlock)transform
+             completion:(YYWebImageCompletionBlock)completion {
+    [self setImageWithURL:imageURL
+              placeholder:placeholder
+                  options:options
+                  manager:nil
+                 progress:progress
+                transform:transform
+               completion:completion];
 }
 
-- (void)yy_setImageWithURL:(NSURL *)imageURL
-               placeholder:(UIImage *)placeholder
-                   options:(YYWebImageOptions)options
-                   manager:(YYWebImageManager *)manager
-                  progress:(YYWebImageProgressBlock)progress
-                 transform:(YYWebImageTransformBlock)transform
-                completion:(YYWebImageCompletionBlock)completion {
+- (void)setImageWithURL:(NSURL *)imageURL
+            placeholder:(UIImage *)placeholder
+                options:(YYWebImageOptions)options
+                manager:(YYWebImageManager *)manager
+               progress:(YYWebImageProgressBlock)progress
+              transform:(YYWebImageTransformBlock)transform
+             completion:(YYWebImageCompletionBlock)completion {
     if ([imageURL isKindOfClass:[NSString class]]) imageURL = [NSURL URLWithString:(id)imageURL];
     manager = manager ? manager : [YYWebImageManager sharedManager];
     
@@ -106,7 +109,7 @@ static int _YYWebImageHighlightedSetterKey;
     }
     int32_t sentinel = [setter cancelWithNewURL:imageURL];
     
-    _yy_dispatch_sync_on_main_queue(^{
+    dispatch_async_on_main_queue(^{
         if ((options & YYWebImageOptionSetImageWithFadeAnimation) &&
             !(options & YYWebImageOptionAvoidSetImage)) {
             if (!self.highlighted) {
@@ -183,7 +186,7 @@ static int _YYWebImageHighlightedSetterKey;
     });
 }
 
-- (void)yy_cancelCurrentImageRequest {
+- (void)cancelCurrentImageRequest {
     _YYWebImageSetter *setter = objc_getAssociatedObject(self, &_YYWebImageSetterKey);
     if (setter) [setter cancel];
 }
@@ -191,76 +194,76 @@ static int _YYWebImageHighlightedSetterKey;
 
 #pragma mark - highlighted image
 
-- (NSURL *)yy_highlightedImageURL {
+- (NSURL *)highlightedImageURL {
     _YYWebImageSetter *setter = objc_getAssociatedObject(self, &_YYWebImageHighlightedSetterKey);
     return setter.imageURL;
 }
 
-- (void)setYy_highlightedImageURL:(NSURL *)imageURL {
-    [self yy_setHighlightedImageWithURL:imageURL
-                            placeholder:nil
-                                options:kNilOptions
-                                manager:nil
-                               progress:nil
-                              transform:nil
-                             completion:nil];
+- (void)setHighlightedImageURL:(NSURL *)imageURL {
+    [self setHighlightedImageWithURL:imageURL
+                         placeholder:nil
+                             options:kNilOptions
+                             manager:nil
+                            progress:nil
+                           transform:nil
+                          completion:nil];
 }
 
-- (void)yy_setHighlightedImageWithURL:(NSURL *)imageURL placeholder:(UIImage *)placeholder {
-    [self yy_setHighlightedImageWithURL:imageURL
-                            placeholder:placeholder
-                                options:kNilOptions
-                                manager:nil
-                               progress:nil
-                              transform:nil
-                             completion:nil];
+- (void)setHighlightedImageWithURL:(NSURL *)imageURL placeholder:(UIImage *)placeholder {
+    [self setHighlightedImageWithURL:imageURL
+                         placeholder:placeholder
+                             options:kNilOptions
+                             manager:nil
+                            progress:nil
+                           transform:nil
+                          completion:nil];
 }
 
-- (void)yy_setHighlightedImageWithURL:(NSURL *)imageURL options:(YYWebImageOptions)options {
-    [self yy_setHighlightedImageWithURL:imageURL
-                            placeholder:nil
-                                options:options
-                                manager:nil
-                               progress:nil
-                              transform:nil
-                             completion:nil];
+- (void)setHighlightedImageWithURL:(NSURL *)imageURL options:(YYWebImageOptions)options {
+    [self setHighlightedImageWithURL:imageURL
+                         placeholder:nil
+                             options:options
+                             manager:nil
+                            progress:nil
+                           transform:nil
+                          completion:nil];
 }
 
-- (void)yy_setHighlightedImageWithURL:(NSURL *)imageURL
-                          placeholder:(UIImage *)placeholder
-                              options:(YYWebImageOptions)options
-                           completion:(YYWebImageCompletionBlock)completion {
-    [self yy_setHighlightedImageWithURL:imageURL
-                            placeholder:placeholder
-                                options:options
-                                manager:nil
-                               progress:nil
-                              transform:nil
-                             completion:completion];
+- (void)setHighlightedImageWithURL:(NSURL *)imageURL
+                       placeholder:(UIImage *)placeholder
+                           options:(YYWebImageOptions)options
+                        completion:(YYWebImageCompletionBlock)completion {
+    [self setHighlightedImageWithURL:imageURL
+                         placeholder:placeholder
+                             options:options
+                             manager:nil
+                            progress:nil
+                           transform:nil
+                          completion:completion];
 }
 
-- (void)yy_setHighlightedImageWithURL:(NSURL *)imageURL
-                          placeholder:(UIImage *)placeholder
-                              options:(YYWebImageOptions)options
-                             progress:(YYWebImageProgressBlock)progress
-                            transform:(YYWebImageTransformBlock)transform
-                           completion:(YYWebImageCompletionBlock)completion {
-    [self yy_setHighlightedImageWithURL:imageURL
-                            placeholder:placeholder
-                                options:options
-                                manager:nil
-                               progress:progress
-                              transform:nil
-                             completion:completion];
+- (void)setHighlightedImageWithURL:(NSURL *)imageURL
+                       placeholder:(UIImage *)placeholder
+                           options:(YYWebImageOptions)options
+                          progress:(YYWebImageProgressBlock)progress
+                         transform:(YYWebImageTransformBlock)transform
+                        completion:(YYWebImageCompletionBlock)completion {
+    [self setHighlightedImageWithURL:imageURL
+                         placeholder:placeholder
+                             options:options
+                             manager:nil
+                            progress:progress
+                           transform:nil
+                          completion:completion];
 }
 
-- (void)yy_setHighlightedImageWithURL:(NSURL *)imageURL
-                          placeholder:(UIImage *)placeholder
-                              options:(YYWebImageOptions)options
-                              manager:(YYWebImageManager *)manager
-                             progress:(YYWebImageProgressBlock)progress
-                            transform:(YYWebImageTransformBlock)transform
-                           completion:(YYWebImageCompletionBlock)completion {
+- (void)setHighlightedImageWithURL:(NSURL *)imageURL
+                       placeholder:(UIImage *)placeholder
+                           options:(YYWebImageOptions)options
+                           manager:(YYWebImageManager *)manager
+                          progress:(YYWebImageProgressBlock)progress
+                         transform:(YYWebImageTransformBlock)transform
+                        completion:(YYWebImageCompletionBlock)completion {
     if ([imageURL isKindOfClass:[NSString class]]) imageURL = [NSURL URLWithString:(id)imageURL];
     manager = manager ? manager : [YYWebImageManager sharedManager];
     
@@ -271,7 +274,7 @@ static int _YYWebImageHighlightedSetterKey;
     }
     int32_t sentinel = [setter cancelWithNewURL:imageURL];
     
-    _yy_dispatch_sync_on_main_queue(^{
+    dispatch_async_on_main_queue(^{
         if ((options & YYWebImageOptionSetImageWithFadeAnimation) &&
             !(options & YYWebImageOptionAvoidSetImage)) {
             if (self.highlighted) {
@@ -347,7 +350,7 @@ static int _YYWebImageHighlightedSetterKey;
     });
 }
 
-- (void)yy_cancelCurrentHighlightedImageRequest {
+- (void)cancelCurrentHighlightedImageRequest {
     _YYWebImageSetter *setter = objc_getAssociatedObject(self, &_YYWebImageHighlightedSetterKey);
     if (setter) [setter cancel];
 }

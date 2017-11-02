@@ -1,6 +1,6 @@
 //
 //  YYImageCoder.h
-//  YYImage <https://github.com/ibireme/YYImage>
+//  YYKit <https://github.com/ibireme/YYKit>
 //
 //  Created by ibireme on 15/5/13.
 //  Copyright (c) 2015 ibireme.
@@ -264,7 +264,7 @@ typedef NS_ENUM(NSUInteger, YYImageBlendOperation) {
 
 /**
  Add an image from a file path to encoder.
- @param image    Image file path.
+ @param path     Image file path.
  @param duration Image duration for animation. Pass 0 to ignore this parameter.
  */
 - (void)addImageWithFile:(NSString *)path duration:(NSTimeInterval)duration;
@@ -313,15 +313,15 @@ typedef NS_ENUM(NSUInteger, YYImageBlendOperation) {
  been decoded or unable to decode, it just returns itself.
  
  @return an image decoded, or just return itself if no needed.
- @see yy_isDecodedForDisplay
+ @see isDecodedForDisplay
  */
-- (instancetype)yy_imageByDecoded;
+- (instancetype)imageByDecoded;
 
 /**
  Wherher the image can be display on screen without additional decoding.
  @warning It just a hint for your code, change it has no other effect.
  */
-@property (nonatomic) BOOL yy_isDecodedForDisplay;
+@property (nonatomic) BOOL isDecodedForDisplay;
 
 /**
  Saves this image to iOS Photos Album. 
@@ -334,7 +334,7 @@ typedef NS_ENUM(NSUInteger, YYImageBlendOperation) {
     assetURL: An URL that identifies the saved image file. If the image is not saved, assetURL is nil.
     error: If the image is not saved, an error object that describes the reason for failure, otherwise nil.
  */
-- (void)yy_saveToAlbumWithCompletionBlock:(nullable void(^)(NSURL * _Nullable assetURL, NSError * _Nullable error))completionBlock;
+- (void)saveToAlbumWithCompletionBlock:(nullable void(^)(NSURL * _Nullable assetURL, NSError * _Nullable error))completionBlock;
 
 /**
  Return a 'best' data representation for this image.
@@ -345,7 +345,7 @@ typedef NS_ENUM(NSUInteger, YYImageBlendOperation) {
  
  @return Image data, or nil if an error occurs.
  */
-- (nullable NSData *)yy_imageDataRepresentation;
+- (nullable NSData *)imageDataRepresentation;
 
 @end
 

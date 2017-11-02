@@ -83,7 +83,7 @@
 {
 
     __weak typeof(self) weakSelf = self;
-    [_adLaunchView.adImageView yy_setImageWithURL:url placeholder:nil options:YYWebImageOptionSetImageWithFadeAnimation completion:^(UIImage *image, NSURL *url, YYWebImageFromType from, YYWebImageStage stage, NSError *error) {
+    [_adLaunchView.adImageView setImageWithURL:url placeholder:nil options:YYWebImageOptionSetImageWithFadeAnimation completion:^(UIImage *image, NSURL *url, YYWebImageFromType from, YYWebImageStage stage, NSError *error) {
         // 启动倒计时
         [weakSelf scheduledGCDTimer];
     }];

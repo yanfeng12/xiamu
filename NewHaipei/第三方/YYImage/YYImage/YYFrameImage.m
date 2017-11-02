@@ -67,7 +67,7 @@ static CGFloat _NSStringPathScale(NSString *string) {
     NSString *firstPath = paths[0];
     NSData *firstData = [NSData dataWithContentsOfFile:firstPath];
     CGFloat scale = _NSStringPathScale(firstPath);
-    UIImage *firstCG = [[[UIImage alloc] initWithData:firstData] yy_imageByDecoded];
+    UIImage *firstCG = [[[UIImage alloc] initWithData:firstData] imageByDecoded];
     self = [self initWithCGImage:firstCG.CGImage scale:scale orientation:UIImageOrientationUp];
     if (!self) return nil;
     long frameByte = CGImageGetBytesPerRow(firstCG.CGImage) * CGImageGetHeight(firstCG.CGImage);
@@ -93,7 +93,7 @@ static CGFloat _NSStringPathScale(NSString *string) {
     
     NSData *firstData = dataArray[0];
     CGFloat scale = [UIScreen mainScreen].scale;
-    UIImage *firstCG = [[[UIImage alloc] initWithData:firstData] yy_imageByDecoded];
+    UIImage *firstCG = [[[UIImage alloc] initWithData:firstData] imageByDecoded];
     self = [self initWithCGImage:firstCG.CGImage scale:scale orientation:UIImageOrientationUp];
     if (!self) return nil;
     long frameByte = CGImageGetBytesPerRow(firstCG.CGImage) * CGImageGetHeight(firstCG.CGImage);
@@ -131,11 +131,11 @@ static CGFloat _NSStringPathScale(NSString *string) {
         NSString *path = _imagePaths[index];
         CGFloat scale = _NSStringPathScale(path);
         NSData *data = [NSData dataWithContentsOfFile:path];
-        return [[UIImage imageWithData:data scale:scale] yy_imageByDecoded];
+        return [[UIImage imageWithData:data scale:scale] imageByDecoded];
     } else if (_imageDatas) {
         if (index >= _imageDatas.count) return nil;
         NSData *data = _imageDatas[index];
-        return [[UIImage imageWithData:data scale:[UIScreen mainScreen].scale] yy_imageByDecoded];
+        return [[UIImage imageWithData:data scale:[UIScreen mainScreen].scale] imageByDecoded];
     } else {
         return index == 0 ? self : nil;
     }
