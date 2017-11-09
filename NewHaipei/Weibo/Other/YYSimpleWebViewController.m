@@ -26,7 +26,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _webView.frame = self.view.bounds;
+    [self lzSetNavigationTitle:@"微博"];
+
+    LZWeakSelf(ws)
+    [self lzSetLeftButtonWithTitle:nil selectedImage:@"houtui" normalImage:@"houtui" actionBlock:^(UIButton *button) {
+
+        [ws.navigationController popViewControllerAnimated:YES];
+    }];
+//    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.mas_equalTo(self.view).offset(LZNavigationHeight);
+//        make.left.right.and.mas_equalTo(self.view);
+//        make.bottom.mas_equalTo(self.view).offset(-LZTabBarHeight);
+//    }];
+    _webView.frame = CGRectMake(0, LZNavigationHeight, self.view.frame.size.width, self.view.frame.size.height-LZNavigationHeight);
     if (kSystemVersion < 7) _webView.height -= 44;
     [self.view addSubview:_webView];
     

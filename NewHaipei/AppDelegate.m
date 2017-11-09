@@ -16,7 +16,7 @@
 #import "FourthViewController.h"
 #import "LZBaseNavigationController.h"
 #import "TouchIdUnlock.h"
-#import "LaunchController.h"
+
 
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
@@ -49,24 +49,24 @@
 //    [self addADLaunchController];
     return YES;
 }
-- (void)addADLaunchController
-{
-    AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    if ([appdelegate.window.rootViewController isKindOfClass:[LZBaseNavigationController class]] == YES) {
-        // 为所欲为
-        LaunchController *launchController = [[LaunchController alloc]init];
-        [appdelegate.window.rootViewController addChildViewController:launchController];
-        launchController.view.frame = appdelegate.window.rootViewController.view.frame;
-        [appdelegate.window.rootViewController.view addSubview:launchController.view];
-    }
-    
-    
-//    UIViewController *rootViewController = self.window.rootViewController;
-//    LaunchController *launchController = [[LaunchController alloc]init];
-//    [rootViewController addChildViewController:launchController];
-//    launchController.view.frame = rootViewController.view.frame;
-//    [rootViewController.view addSubview:launchController.view];
-}
+//- (void)addADLaunchController
+//{
+//    AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//    if ([appdelegate.window.rootViewController isKindOfClass:[LZBaseNavigationController class]] == YES) {
+//        // 为所欲为
+//        LaunchController *launchController = [[LaunchController alloc]init];
+//        [appdelegate.window.rootViewController addChildViewController:launchController];
+//        launchController.view.frame = appdelegate.window.rootViewController.view.frame;
+//        [appdelegate.window.rootViewController.view addSubview:launchController.view];
+//    }
+//    
+//    
+////    UIViewController *rootViewController = self.window.rootViewController;
+////    LaunchController *launchController = [[LaunchController alloc]init];
+////    [rootViewController addChildViewController:launchController];
+////    launchController.view.frame = rootViewController.view.frame;
+////    [rootViewController.view addSubview:launchController.view];
+//}
 - (void)createSqlite {
     
     [LZSqliteTool LZCreateSqliteWithName:LZSqliteName];

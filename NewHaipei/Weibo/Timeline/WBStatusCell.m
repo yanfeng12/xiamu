@@ -236,7 +236,7 @@
                 _button.top = 0;
                 _button.right = self.width;
                 [_button setTitle:button.name forState:UIControlStateNormal];
-                [_button yy_setImageWithURL:button.pic forState:UIControlStateNormal placeholder:nil];
+                [_button setImageWithURL:button.pic forState:UIControlStateNormal placeholder:nil];
 //                [_button yy_setImageWithURL:button.pic forState:UIControlStateNormal placeholder:nil];
             } else {
                 _button.hidden = YES;
@@ -251,7 +251,7 @@
             _button.hidden = NO;
             _button.frame = self.bounds;
             [_button setTitle:nil forState:UIControlStateNormal];
-            [_button yy_cancelImageRequestForState:UIControlStateNormal];
+            [_button cancelImageRequestForState:UIControlStateNormal];
             [_button setImage:[WBStatusHelper imageNamed:@"multimedia_videocard_play"] forState:UIControlStateNormal];
             
         } break;
@@ -847,7 +847,7 @@
     for (int i = 0; i < 9; i++) {
         UIView *imageView = _picViews[i];
         if (i >= picsCount) {
-            [imageView.layer yy_cancelCurrentImageRequest];
+            [imageView.layer cancelCurrentImageRequest];
             imageView.hidden = YES;
         } else {
             CGPoint origin = {0};
@@ -889,7 +889,7 @@
             }
             
             @weakify(imageView);
-            [imageView.layer yy_setImageWithURL:pic.bmiddle.url
+            [imageView.layer setImageWithURL:pic.bmiddle.url
                                  placeholder:nil
                                      options:YYWebImageOptionAvoidSetImage
                                   completion:^(UIImage *image, NSURL *url, YYWebImageFromType from, YYWebImageStage stage, NSError *error) {

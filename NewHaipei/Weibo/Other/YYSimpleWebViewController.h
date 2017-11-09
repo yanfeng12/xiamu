@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface YYSimpleWebViewController : UIViewController
+#import "WeiboBaseViewController.h"
+@interface YYSimpleWebViewController : WeiboBaseViewController
 
 - (instancetype)initWithURL:(NSURL *)url;
 

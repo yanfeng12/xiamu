@@ -11,7 +11,7 @@
 #import "FirstViewTableViewCell.h"
 #import "GPLActivity.h"
 #import "WeiboActivity.h"
-#import "LaunchController.h"
+
 @interface FirstViewController ()
 {
     NSArray *tittleArr;
@@ -25,16 +25,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-}
-- (void)addADLaunchController
-{
-    
-    LaunchController *launchController = [[LaunchController alloc]init];
-    [self addChildViewController:launchController];
-    launchController.view.frame = self.view.frame;
-    [self.view addSubview:launchController.view];
-    
-
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
