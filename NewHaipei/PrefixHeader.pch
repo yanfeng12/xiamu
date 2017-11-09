@@ -11,6 +11,7 @@
 #import "Masonry.h"
 #import "SVProgressHUD.h"
 #import "Reachability.h"
+#import "YYKit.h"
 #ifdef DEBUG
 #define LZLog(s, ... ) NSLog( @"[%@：in line: %d]-->[message: %@]", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__] )
 #else
