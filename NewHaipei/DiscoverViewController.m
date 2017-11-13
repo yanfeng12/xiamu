@@ -12,6 +12,7 @@
 #import "GPLTimeLineViewController.h"
 #import "ThirdViewController.h"
 #import "WBStatusTimelineViewController.h"
+#import "GPLWebViewController.h"
 @interface DiscoverViewController ()
 {
     
@@ -74,18 +75,18 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     PersonCenterCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PersonCenterCell"];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    if (indexPath.section==0) {//我的好友
+    if (indexPath.section==0) {
         cell.titleIV.image = [UIImage imageNamed:@"ff_IconShowAlbum"];
         cell.titleLabel.text = @"朋友圈";
         
-    }else if (indexPath.section==1){//设置
+    }else if (indexPath.section==1){
         if (indexPath.row==0) {
             cell.titleIV.image = [UIImage imageNamed:@"ff_IconQRCode"];
             cell.titleLabel.text = @"扫一扫";
             
         }else if (indexPath.row==1){
             cell.titleIV.image = [UIImage imageNamed:@"ff_IconShake"];
-            cell.titleLabel.text = @"摇一摇";
+            cell.titleLabel.text = @"OC与JS交互";
         }
         
     }else if(indexPath.section==2){
@@ -107,6 +108,11 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.section==0) {
         [self.navigationController pushViewController:[[GPLTimeLineViewController alloc]init] animated:YES];
+    }
+    if (indexPath.section==1) {
+        if (indexPath.row==1) {
+            [self.navigationController pushViewController:[[GPLWebViewController alloc]init] animated:YES];
+        }
     }
     if (indexPath.section==2) {
         [self.navigationController pushViewController:[[WBStatusTimelineViewController alloc]init] animated:YES];

@@ -1,0 +1,502 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2DF48A31D89F75956104B871C563CE55 /* WKWebView+BAKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B1578D2A32271C0F46389AD4BCD73EF0 /* WKWebView+BAKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		475BAFD9377C108A0FA6EBDD2328A292 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		4F5A92499B05FA85E17F1416AA2745B2 /* WKWebView+BAKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0FBBE581179551D10E723032B0C3BD /* WKWebView+BAKit.m */; };
+		58B17C78199F6CDCC24BC6D425CA3EE5 /* WKWebView+BAJavaScriptAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = DAEE2A2A24E74A16C25D14161E7DB815 /* WKWebView+BAJavaScriptAlert.m */; };
+		60DD7048C08DD95B2619C1CEC7899383 /* WeakScriptMessageDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = B69E6FD6B62D5BA98FAA2645488742B6 /* WeakScriptMessageDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7390278C38E1C3EE15AD23AB13E2EB65 /* BAKit_ConfigurationDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = C04F9B8E4AC609C168E41E329F544748 /* BAKit_ConfigurationDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9BC2754CC82F9F909E3123743409EFD6 /* BAKit_WebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DFE7AFADBF41B78386AC3AD0B1D4110 /* BAKit_WebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BFB3FC41A303BB132A2A20D97970704E /* WKWebView+BAJavaScriptAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = E1E10349197889A6CBFE32A219B3120D /* WKWebView+BAJavaScriptAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5FBAEB2401AC21272E3B05D5AC4C790 /* WeakScriptMessageDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 642037CBA062E3F98B32BD197A9E626C /* WeakScriptMessageDelegate.m */; };
+		CA95A7E1774463243F3BED2FC4F5FAED /* WKWebView+Post.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B2830C7BBC73D3D7A6522D8D3C8A122 /* WKWebView+Post.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D442D176B91C8B375C1442E7CC6AC283 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		E8DAA59B797B8B8FD6487967B1818EC2 /* Pods-NewHaipei-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C70639E1CDB09571757BD3DE3A6713B2 /* Pods-NewHaipei-dummy.m */; };
+		EED75AC9C9B214B2ACB57AAA0FBACDD7 /* BAWKWebView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE5AE8D9E51583FD17C245AA606217C /* BAWKWebView-dummy.m */; };
+		F6557E2BA74650CDF43EDBC1C29F0136 /* WKWebView+Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E49110E9D6CE27956F9E5CDD009304C /* WKWebView+Post.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BF1F0F5455843724F7A208ACD85CDA4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD06C370088B2E663738590FD7927BFE;
+			remoteInfo = BAWKWebView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0AEEB42714466BBB2C10D186A7ECAF89 /* libBAWKWebView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libBAWKWebView.a; path = libBAWKWebView.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0B2830C7BBC73D3D7A6522D8D3C8A122 /* WKWebView+Post.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WKWebView+Post.h"; path = "BAWKWebView/BAWKWebView/WKWebView+Post.h"; sourceTree = "<group>"; };
+		1006D56740D7327381584D57E9BB0877 /* BAWKWebView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BAWKWebView.xcconfig; sourceTree = "<group>"; };
+		2D91DDE9709A21838DA54FA952085124 /* BAWKWebView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BAWKWebView-prefix.pch"; sourceTree = "<group>"; };
+		4D2A646047FA881051209A9D3D0ECF45 /* Pods-NewHaipei-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NewHaipei-acknowledgements.plist"; sourceTree = "<group>"; };
+		5DFE7AFADBF41B78386AC3AD0B1D4110 /* BAKit_WebView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BAKit_WebView.h; path = BAWKWebView/BAWKWebView/BAKit_WebView.h; sourceTree = "<group>"; };
+		5EE5AE8D9E51583FD17C245AA606217C /* BAWKWebView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BAWKWebView-dummy.m"; sourceTree = "<group>"; };
+		642037CBA062E3F98B32BD197A9E626C /* WeakScriptMessageDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WeakScriptMessageDelegate.m; path = BAWKWebView/BAWKWebView/WeakScriptMessageDelegate.m; sourceTree = "<group>"; };
+		6E49110E9D6CE27956F9E5CDD009304C /* WKWebView+Post.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "WKWebView+Post.m"; path = "BAWKWebView/BAWKWebView/WKWebView+Post.m"; sourceTree = "<group>"; };
+		75AC74DA0995AB78664BB4F4B32E7D4F /* Pods-NewHaipei-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NewHaipei-resources.sh"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F39A8F18D728F4CAE4DF880FF4063AA /* Pods-NewHaipei-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NewHaipei-frameworks.sh"; sourceTree = "<group>"; };
+		B1578D2A32271C0F46389AD4BCD73EF0 /* WKWebView+BAKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WKWebView+BAKit.h"; path = "BAWKWebView/BAWKWebView/WKWebView+BAKit.h"; sourceTree = "<group>"; };
+		B69E6FD6B62D5BA98FAA2645488742B6 /* WeakScriptMessageDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WeakScriptMessageDelegate.h; path = BAWKWebView/BAWKWebView/WeakScriptMessageDelegate.h; sourceTree = "<group>"; };
+		C04F9B8E4AC609C168E41E329F544748 /* BAKit_ConfigurationDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BAKit_ConfigurationDefine.h; path = BAWKWebView/BAWKWebView/BAKit_ConfigurationDefine.h; sourceTree = "<group>"; };
+		C70639E1CDB09571757BD3DE3A6713B2 /* Pods-NewHaipei-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NewHaipei-dummy.m"; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D5AADB603B94D51E0EF14877C3B50E57 /* Pods-NewHaipei.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NewHaipei.debug.xcconfig"; sourceTree = "<group>"; };
+		DAEE2A2A24E74A16C25D14161E7DB815 /* WKWebView+BAJavaScriptAlert.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "WKWebView+BAJavaScriptAlert.m"; path = "BAWKWebView/BAWKWebView/WKWebView+BAJavaScriptAlert.m"; sourceTree = "<group>"; };
+		E1E10349197889A6CBFE32A219B3120D /* WKWebView+BAJavaScriptAlert.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WKWebView+BAJavaScriptAlert.h"; path = "BAWKWebView/BAWKWebView/WKWebView+BAJavaScriptAlert.h"; sourceTree = "<group>"; };
+		F326A66707561CFCA3BE1E881763779E /* Pods-NewHaipei-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NewHaipei-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F6258FD5D89B470C1721C9D645DEDAA0 /* Pods-NewHaipei.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NewHaipei.release.xcconfig"; sourceTree = "<group>"; };
+		F6C1017710728BDC6E86ED7E2518274F /* libPods-NewHaipei.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-NewHaipei.a"; path = "libPods-NewHaipei.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB0FBBE581179551D10E723032B0C3BD /* WKWebView+BAKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "WKWebView+BAKit.m"; path = "BAWKWebView/BAWKWebView/WKWebView+BAKit.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		915E9E386C49D2E6A6A4386CA6E1E65F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D442D176B91C8B375C1442E7CC6AC283 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF1B9235D6128C98E7A171CC364C2355 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				475BAFD9377C108A0FA6EBDD2328A292 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0CE1550F90461498CBD79AC429F78655 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CFC09A6914369A512D971BC992980487 /* Pods-NewHaipei */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2813CA4AD3F8C022688EF4DCEDA17206 /* BAWKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				C04F9B8E4AC609C168E41E329F544748 /* BAKit_ConfigurationDefine.h */,
+				5DFE7AFADBF41B78386AC3AD0B1D4110 /* BAKit_WebView.h */,
+				B69E6FD6B62D5BA98FAA2645488742B6 /* WeakScriptMessageDelegate.h */,
+				642037CBA062E3F98B32BD197A9E626C /* WeakScriptMessageDelegate.m */,
+				E1E10349197889A6CBFE32A219B3120D /* WKWebView+BAJavaScriptAlert.h */,
+				DAEE2A2A24E74A16C25D14161E7DB815 /* WKWebView+BAJavaScriptAlert.m */,
+				B1578D2A32271C0F46389AD4BCD73EF0 /* WKWebView+BAKit.h */,
+				FB0FBBE581179551D10E723032B0C3BD /* WKWebView+BAKit.m */,
+				0B2830C7BBC73D3D7A6522D8D3C8A122 /* WKWebView+Post.h */,
+				6E49110E9D6CE27956F9E5CDD009304C /* WKWebView+Post.m */,
+				91708636412ADF94B6E2E38D0CD626BF /* Support Files */,
+			);
+			name = BAWKWebView;
+			path = BAWKWebView;
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		77B5686C3A81B1B6C2D6993B1B72CA1D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0AEEB42714466BBB2C10D186A7ECAF89 /* libBAWKWebView.a */,
+				F6C1017710728BDC6E86ED7E2518274F /* libPods-NewHaipei.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		79440E06144F92138AB885254D99DB92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2813CA4AD3F8C022688EF4DCEDA17206 /* BAWKWebView */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				79440E06144F92138AB885254D99DB92 /* Pods */,
+				77B5686C3A81B1B6C2D6993B1B72CA1D /* Products */,
+				0CE1550F90461498CBD79AC429F78655 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		91708636412ADF94B6E2E38D0CD626BF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1006D56740D7327381584D57E9BB0877 /* BAWKWebView.xcconfig */,
+				5EE5AE8D9E51583FD17C245AA606217C /* BAWKWebView-dummy.m */,
+				2D91DDE9709A21838DA54FA952085124 /* BAWKWebView-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BAWKWebView";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CFC09A6914369A512D971BC992980487 /* Pods-NewHaipei */ = {
+			isa = PBXGroup;
+			children = (
+				F326A66707561CFCA3BE1E881763779E /* Pods-NewHaipei-acknowledgements.markdown */,
+				4D2A646047FA881051209A9D3D0ECF45 /* Pods-NewHaipei-acknowledgements.plist */,
+				C70639E1CDB09571757BD3DE3A6713B2 /* Pods-NewHaipei-dummy.m */,
+				9F39A8F18D728F4CAE4DF880FF4063AA /* Pods-NewHaipei-frameworks.sh */,
+				75AC74DA0995AB78664BB4F4B32E7D4F /* Pods-NewHaipei-resources.sh */,
+				D5AADB603B94D51E0EF14877C3B50E57 /* Pods-NewHaipei.debug.xcconfig */,
+				F6258FD5D89B470C1721C9D645DEDAA0 /* Pods-NewHaipei.release.xcconfig */,
+			);
+			name = "Pods-NewHaipei";
+			path = "Target Support Files/Pods-NewHaipei";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7E9EBB654A77C29914CA1773B8B5C465 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7390278C38E1C3EE15AD23AB13E2EB65 /* BAKit_ConfigurationDefine.h in Headers */,
+				9BC2754CC82F9F909E3123743409EFD6 /* BAKit_WebView.h in Headers */,
+				60DD7048C08DD95B2619C1CEC7899383 /* WeakScriptMessageDelegate.h in Headers */,
+				BFB3FC41A303BB132A2A20D97970704E /* WKWebView+BAJavaScriptAlert.h in Headers */,
+				2DF48A31D89F75956104B871C563CE55 /* WKWebView+BAKit.h in Headers */,
+				CA95A7E1774463243F3BED2FC4F5FAED /* WKWebView+Post.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6DDC96F7F47200F890A8283BB2535C60 /* Pods-NewHaipei */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79CC38C16C6A5D220CE25ED2780D412A /* Build configuration list for PBXNativeTarget "Pods-NewHaipei" */;
+			buildPhases = (
+				3E1BA1A11DE73EA4685DFB0E9A8946A9 /* Sources */,
+				915E9E386C49D2E6A6A4386CA6E1E65F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				681E91624B5CE9C2493CA69ECFE4126A /* PBXTargetDependency */,
+			);
+			name = "Pods-NewHaipei";
+			productName = "Pods-NewHaipei";
+			productReference = F6C1017710728BDC6E86ED7E2518274F /* libPods-NewHaipei.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		DD06C370088B2E663738590FD7927BFE /* BAWKWebView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1C51DF129C45B1770078208EE543FA8D /* Build configuration list for PBXNativeTarget "BAWKWebView" */;
+			buildPhases = (
+				D90B714618FCFBDE02FD8D768FA869DD /* Sources */,
+				EF1B9235D6128C98E7A171CC364C2355 /* Frameworks */,
+				7E9EBB654A77C29914CA1773B8B5C465 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BAWKWebView;
+			productName = BAWKWebView;
+			productReference = 0AEEB42714466BBB2C10D186A7ECAF89 /* libBAWKWebView.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 77B5686C3A81B1B6C2D6993B1B72CA1D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD06C370088B2E663738590FD7927BFE /* BAWKWebView */,
+				6DDC96F7F47200F890A8283BB2535C60 /* Pods-NewHaipei */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3E1BA1A11DE73EA4685DFB0E9A8946A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8DAA59B797B8B8FD6487967B1818EC2 /* Pods-NewHaipei-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D90B714618FCFBDE02FD8D768FA869DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED75AC9C9B214B2ACB57AAA0FBACDD7 /* BAWKWebView-dummy.m in Sources */,
+				C5FBAEB2401AC21272E3B05D5AC4C790 /* WeakScriptMessageDelegate.m in Sources */,
+				58B17C78199F6CDCC24BC6D425CA3EE5 /* WKWebView+BAJavaScriptAlert.m in Sources */,
+				4F5A92499B05FA85E17F1416AA2745B2 /* WKWebView+BAKit.m in Sources */,
+				F6557E2BA74650CDF43EDBC1C29F0136 /* WKWebView+Post.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		681E91624B5CE9C2493CA69ECFE4126A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BAWKWebView;
+			target = DD06C370088B2E663738590FD7927BFE /* BAWKWebView */;
+			targetProxy = BF1F0F5455843724F7A208ACD85CDA4E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		156284431C64CB05C59BDA0595A1E95A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3B6893CC36A1CB73C224BEA3C7EB6FFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1006D56740D7327381584D57E9BB0877 /* BAWKWebView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BAWKWebView/BAWKWebView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		6C64752A0C80EC39BE5AEC69342028E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5AADB603B94D51E0EF14877C3B50E57 /* Pods-NewHaipei.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C382132BB6BF8CA1A911872A2062FD0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		CD93C5076ACBE6DFF544F58A033999C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6258FD5D89B470C1721C9D645DEDAA0 /* Pods-NewHaipei.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		D7AB1F1B3B8BF9993B0CDA249AA7FF41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1006D56740D7327381584D57E9BB0877 /* BAWKWebView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BAWKWebView/BAWKWebView-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C51DF129C45B1770078208EE543FA8D /* Build configuration list for PBXNativeTarget "BAWKWebView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7AB1F1B3B8BF9993B0CDA249AA7FF41 /* Debug */,
+				3B6893CC36A1CB73C224BEA3C7EB6FFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C382132BB6BF8CA1A911872A2062FD0D /* Debug */,
+				156284431C64CB05C59BDA0595A1E95A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79CC38C16C6A5D220CE25ED2780D412A /* Build configuration list for PBXNativeTarget "Pods-NewHaipei" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C64752A0C80EC39BE5AEC69342028E4 /* Debug */,
+				CD93C5076ACBE6DFF544F58A033999C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

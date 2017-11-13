@@ -281,7 +281,18 @@
 		B972C18F1EA75CF900BD92DA /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B972C17E1EA75CF900BD92DA /* IQKeyboardManager.bundle */; };
 		B972C1901EA75CF900BD92DA /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = B972C17F1EA75CF900BD92DA /* LICENSE.md */; };
 		B972C1911EA75CF900BD92DA /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B972C1801EA75CF900BD92DA /* README.md */; };
+		B97467B11FB9766100A2D64F /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97467B01FB9766100A2D64F /* TestViewController.m */; };
+		B97467BF1FB9936F00A2D64F /* NSMutableAttributedString+BAKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B97467B71FB9936F00A2D64F /* NSMutableAttributedString+BAKit.m */; };
+		B97467C01FB9936F00A2D64F /* NSObject+BARunTime.m in Sources */ = {isa = PBXBuildFile; fileRef = B97467B91FB9936F00A2D64F /* NSObject+BARunTime.m */; };
+		B97467C11FB9936F00A2D64F /* UIAlertController+BAKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B97467BB1FB9936F00A2D64F /* UIAlertController+BAKit.m */; };
+		B97467C21FB9936F00A2D64F /* BAKit_WebView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B97467BC1FB9936F00A2D64F /* BAKit_WebView.bundle */; };
+		B97467C31FB9936F00A2D64F /* BAWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97467BE1FB9936F00A2D64F /* BAWebViewController.m */; };
 		B976D3721EA8ABFF00ADF265 /* VideoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B976D3711EA8ABFF00ADF265 /* VideoListViewController.m */; };
+		B97D9FF91FB94FA6003EA944 /* GPLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B97D9FF81FB94FA6003EA944 /* GPLWebViewController.m */; };
+		B97DA0001FB94FED003EA944 /* BAHome.html in Resources */ = {isa = PBXBuildFile; fileRef = B97D9FFC1FB94FED003EA944 /* BAHome.html */; };
+		B97DA0011FB94FED003EA944 /* BAHome2.html in Resources */ = {isa = PBXBuildFile; fileRef = B97D9FFD1FB94FED003EA944 /* BAHome2.html */; };
+		B97DA0021FB94FED003EA944 /* BAWebView.html in Resources */ = {isa = PBXBuildFile; fileRef = B97D9FFE1FB94FED003EA944 /* BAWebView.html */; };
+		B97DA0031FB94FED003EA944 /* jquery-1.7.2.min.js in Resources */ = {isa = PBXBuildFile; fileRef = B97D9FFF1FB94FED003EA944 /* jquery-1.7.2.min.js */; };
 		B9872B2C1E9E116300ABAF69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B9872B2B1E9E116300ABAF69 /* main.m */; };
 		B9872B2F1E9E116300ABAF69 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B9872B2E1E9E116300ABAF69 /* AppDelegate.m */; };
 		B9872B321E9E116300ABAF69 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9872B311E9E116300ABAF69 /* ViewController.m */; };
@@ -806,6 +817,7 @@
 		B9EA0F561FA86FFA00E1F4A6 /* WBStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EA0F3D1FA86FF900E1F4A6 /* WBStatusCell.m */; };
 		B9EA0F571FA86FFA00E1F4A6 /* WBStatusLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EA0F3F1FA86FF900E1F4A6 /* WBStatusLayout.m */; };
 		B9EA0F581FA86FFA00E1F4A6 /* WBStatusTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9EA0F411FA86FF900E1F4A6 /* WBStatusTimelineViewController.m */; };
+		ECD4B2DA48655D67455F5D0E /* libPods-NewHaipei.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F4605E8C6C6A222CE57BFC3 /* libPods-NewHaipei.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -826,6 +838,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1EB4E361BBFE70BCEBBCEBB5 /* Pods-NewHaipei.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewHaipei.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NewHaipei/Pods-NewHaipei.debug.xcconfig"; sourceTree = "<group>"; };
+		3F4605E8C6C6A222CE57BFC3 /* libPods-NewHaipei.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NewHaipei.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		891EBCE3FE6E90D4CA22A7EE /* Pods-NewHaipei.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewHaipei.release.xcconfig"; path = "Pods/Target Support Files/Pods-NewHaipei/Pods-NewHaipei.release.xcconfig"; sourceTree = "<group>"; };
 		B910589E1EA5A48400A6C24E /* Messageitem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Messageitem.h; sourceTree = "<group>"; };
 		B910589F1EA5A48400A6C24E /* Messageitem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Messageitem.m; sourceTree = "<group>"; };
 		B9105BE31EA5E19300A6C24E /* MLEmoji_Expression.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MLEmoji_Expression.bundle; sourceTree = "<group>"; };
@@ -1396,8 +1411,27 @@
 		B972C17E1EA75CF900BD92DA /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
 		B972C17F1EA75CF900BD92DA /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		B972C1801EA75CF900BD92DA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		B97467AF1FB9766100A2D64F /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		B97467B01FB9766100A2D64F /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		B97467B41FB9936F00A2D64F /* BAAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAAlertController.h; sourceTree = "<group>"; };
+		B97467B51FB9936F00A2D64F /* BAKit_ConfigurationDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAKit_ConfigurationDefine.h; sourceTree = "<group>"; };
+		B97467B61FB9936F00A2D64F /* NSMutableAttributedString+BAKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+BAKit.h"; sourceTree = "<group>"; };
+		B97467B71FB9936F00A2D64F /* NSMutableAttributedString+BAKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+BAKit.m"; sourceTree = "<group>"; };
+		B97467B81FB9936F00A2D64F /* NSObject+BARunTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BARunTime.h"; sourceTree = "<group>"; };
+		B97467B91FB9936F00A2D64F /* NSObject+BARunTime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BARunTime.m"; sourceTree = "<group>"; };
+		B97467BA1FB9936F00A2D64F /* UIAlertController+BAKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+BAKit.h"; sourceTree = "<group>"; };
+		B97467BB1FB9936F00A2D64F /* UIAlertController+BAKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+BAKit.m"; sourceTree = "<group>"; };
+		B97467BC1FB9936F00A2D64F /* BAKit_WebView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BAKit_WebView.bundle; sourceTree = "<group>"; };
+		B97467BD1FB9936F00A2D64F /* BAWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAWebViewController.h; sourceTree = "<group>"; };
+		B97467BE1FB9936F00A2D64F /* BAWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAWebViewController.m; sourceTree = "<group>"; };
 		B976D3701EA8ABFF00ADF265 /* VideoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoListViewController.h; sourceTree = "<group>"; };
 		B976D3711EA8ABFF00ADF265 /* VideoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoListViewController.m; sourceTree = "<group>"; };
+		B97D9FF71FB94FA6003EA944 /* GPLWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPLWebViewController.h; sourceTree = "<group>"; };
+		B97D9FF81FB94FA6003EA944 /* GPLWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPLWebViewController.m; sourceTree = "<group>"; };
+		B97D9FFC1FB94FED003EA944 /* BAHome.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BAHome.html; sourceTree = "<group>"; };
+		B97D9FFD1FB94FED003EA944 /* BAHome2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BAHome2.html; sourceTree = "<group>"; };
+		B97D9FFE1FB94FED003EA944 /* BAWebView.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BAWebView.html; sourceTree = "<group>"; };
+		B97D9FFF1FB94FED003EA944 /* jquery-1.7.2.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.7.2.min.js"; sourceTree = "<group>"; };
 		B9872B271E9E116300ABAF69 /* NewHaipei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewHaipei.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9872B2B1E9E116300ABAF69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B9872B2D1E9E116300ABAF69 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -2144,6 +2178,7 @@
 				B95D0BFD1EA9A8EF001DCBC8 /* libavcodec.a in Frameworks */,
 				B95D0C011EA9A8EF001DCBC8 /* libswresample.a in Frameworks */,
 				B95D0BFF1EA9A8EF001DCBC8 /* libavformat.a in Frameworks */,
+				ECD4B2DA48655D67455F5D0E /* libPods-NewHaipei.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2164,6 +2199,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		67B8F8EDB10134177A181E04 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1EB4E361BBFE70BCEBBCEBB5 /* Pods-NewHaipei.debug.xcconfig */,
+				891EBCE3FE6E90D4CA22A7EE /* Pods-NewHaipei.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B910589D1EA5A45300A6C24E /* chatModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -2725,6 +2769,7 @@
 				B9A710931FB428D8004F2DC9 /* UIKit.framework */,
 				B95D0C031EA9B595001DCBC8 /* libz.tbd */,
 				B952A17E1EA0B1CE00D7B2EF /* libsqlite3.tbd */,
+				3F4605E8C6C6A222CE57BFC3 /* libPods-NewHaipei.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -3476,6 +3521,32 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		B97467B21FB9936F00A2D64F /* BAWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B97467B31FB9936F00A2D64F /* BAAlertController */,
+				B97467BC1FB9936F00A2D64F /* BAKit_WebView.bundle */,
+				B97467BD1FB9936F00A2D64F /* BAWebViewController.h */,
+				B97467BE1FB9936F00A2D64F /* BAWebViewController.m */,
+			);
+			path = BAWebViewController;
+			sourceTree = "<group>";
+		};
+		B97467B31FB9936F00A2D64F /* BAAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				B97467B41FB9936F00A2D64F /* BAAlertController.h */,
+				B97467B51FB9936F00A2D64F /* BAKit_ConfigurationDefine.h */,
+				B97467B61FB9936F00A2D64F /* NSMutableAttributedString+BAKit.h */,
+				B97467B71FB9936F00A2D64F /* NSMutableAttributedString+BAKit.m */,
+				B97467B81FB9936F00A2D64F /* NSObject+BARunTime.h */,
+				B97467B91FB9936F00A2D64F /* NSObject+BARunTime.m */,
+				B97467BA1FB9936F00A2D64F /* UIAlertController+BAKit.h */,
+				B97467BB1FB9936F00A2D64F /* UIAlertController+BAKit.m */,
+			);
+			path = BAAlertController;
+			sourceTree = "<group>";
+		};
 		B976D3731EA8AC1E00ADF265 /* 直播测试 */ = {
 			isa = PBXGroup;
 			children = (
@@ -3491,6 +3562,30 @@
 			name = "直播测试";
 			sourceTree = "<group>";
 		};
+		B97D9FFA1FB94FB6003EA944 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				B97467B21FB9936F00A2D64F /* BAWebViewController */,
+				B97D9FFB1FB94FED003EA944 /* Resources */,
+				B97D9FF71FB94FA6003EA944 /* GPLWebViewController.h */,
+				B97D9FF81FB94FA6003EA944 /* GPLWebViewController.m */,
+				B97467AF1FB9766100A2D64F /* TestViewController.h */,
+				B97467B01FB9766100A2D64F /* TestViewController.m */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		B97D9FFB1FB94FED003EA944 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B97D9FFC1FB94FED003EA944 /* BAHome.html */,
+				B97D9FFD1FB94FED003EA944 /* BAHome2.html */,
+				B97D9FFE1FB94FED003EA944 /* BAWebView.html */,
+				B97D9FFF1FB94FED003EA944 /* jquery-1.7.2.min.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		B9872B1E1E9E116300ABAF69 = {
 			isa = PBXGroup;
 			children = (
@@ -3499,6 +3594,7 @@
 				B9872B4E1E9E116400ABAF69 /* NewHaipeiUITests */,
 				B9872B281E9E116300ABAF69 /* Products */,
 				B952A17D1EA0B1CE00D7B2EF /* Frameworks */,
+				67B8F8EDB10134177A181E04 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -3781,13 +3877,14 @@
 		B99668B71FA2D9BE0073EB56 /* 发现 */ = {
 			isa = PBXGroup;
 			children = (
+				B9966BDF1FA300020073EB56 /* 朋友圈 */,
 				B9EA0F171FA86FF900E1F4A6 /* Weibo */,
 				B99668BB1FA2DCAA0073EB56 /* DiscoverViewController.h */,
 				B99668BC1FA2DCAA0073EB56 /* DiscoverViewController.m */,
 				B99668C21FA2E19C0073EB56 /* PersonCenterCell.h */,
 				B99668C11FA2E19C0073EB56 /* PersonCenterCell.m */,
 				B99668C31FA2E19C0073EB56 /* PersonCenterCell.xib */,
-				B9966BDF1FA300020073EB56 /* 朋友圈 */,
+				B97D9FFA1FB94FB6003EA944 /* WebView */,
 			);
 			name = "发现";
 			sourceTree = "<group>";
@@ -5660,9 +5757,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B9872B541E9E116400ABAF69 /* Build configuration list for PBXNativeTarget "NewHaipei" */;
 			buildPhases = (
+				B75E4234B081A7565833E383 /* [CP] Check Pods Manifest.lock */,
 				B9872B231E9E116300ABAF69 /* Sources */,
 				B9872B241E9E116300ABAF69 /* Frameworks */,
 				B9872B251E9E116300ABAF69 /* Resources */,
+				B8D3B557227FADFBD52E1E7E /* [CP] Embed Pods Frameworks */,
+				418015948E0390A81FB15024 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -5787,9 +5887,11 @@
 				B9966BC31FA2FF430073EB56 /* f_static_105@3x.png in Resources */,
 				B9966B131FA2FF420073EB56 /* f_static_017@3x.png in Resources */,
 				B99669351FA2E4CF0073EB56 /* tx.jpeg in Resources */,
+				B97DA0031FB94FED003EA944 /* jquery-1.7.2.min.js in Resources */,
 				B9966BBD1FA2FF430073EB56 /* f_static_102@3x.png in Resources */,
 				B996692D1FA2E4CF0073EB56 /* pic2.jpg in Resources */,
 				B9966B8B1FA2FF420073EB56 /* f_static_077@3x.png in Resources */,
+				B97DA0021FB94FED003EA944 /* BAWebView.html in Resources */,
 				B9966B0D1FA2FF420073EB56 /* f_static_014@3x.png in Resources */,
 				B9966B991FA2FF420073EB56 /* f_static_084@3x.png in Resources */,
 				B9EA0F441FA86FFA00E1F4A6 /* weibo_2.json in Resources */,
@@ -6010,6 +6112,8 @@
 				B96A01C81EA48F3100C1F612 /* GPL18.jpg in Resources */,
 				B9966B911FA2FF420073EB56 /* f_static_080@3x.png in Resources */,
 				B9966BB51FA2FF430073EB56 /* f_static_098@3x.png in Resources */,
+				B97DA0001FB94FED003EA944 /* BAHome.html in Resources */,
+				B97DA0011FB94FED003EA944 /* BAHome2.html in Resources */,
 				B99669021FA2E4CF0073EB56 /* background.jpeg in Resources */,
 				B9966B5B1FA2FF420073EB56 /* f_static_053@3x.png in Resources */,
 				B96A01D51EA48F3100C1F612 /* GPL9.jpg in Resources */,
@@ -6025,6 +6129,7 @@
 				B952A0D81EA0815B00D7B2EF /* MJRefresh.bundle in Resources */,
 				B972C13E1EA75B8D00BD92DA /* gesture_circle_nor@2x.png in Resources */,
 				B9966BB31FA2FF430073EB56 /* f_static_097@3x.png in Resources */,
+				B97467C21FB9936F00A2D64F /* BAKit_WebView.bundle in Resources */,
 				B9966B6B1FA2FF420073EB56 /* f_static_061@3x.png in Resources */,
 				B9966BC41FA2FF430073EB56 /* f_static_106@2x.png in Resources */,
 				B9966B771FA2FF420073EB56 /* f_static_067@3x.png in Resources */,
@@ -6215,6 +6320,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		418015948E0390A81FB15024 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NewHaipei/Pods-NewHaipei-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B75E4234B081A7565833E383 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B8D3B557227FADFBD52E1E7E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NewHaipei/Pods-NewHaipei-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B9872B231E9E116300ABAF69 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -6319,6 +6472,7 @@
 				B9105C1E1EA5E19B00A6C24E /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				B94D68191E9F4A6100A781E3 /* SVIndefiniteAnimatedView.m in Sources */,
 				B952A0CD1EA0815B00D7B2EF /* MJRefreshFooter.m in Sources */,
+				B97D9FF91FB94FA6003EA944 /* GPLWebViewController.m in Sources */,
 				B9966BD91FA2FF430073EB56 /* PanelBottomView.m in Sources */,
 				B9966BDD1FA2FF430073EB56 /* RFRecordButton.m in Sources */,
 				B972C18E1EA75CF900BD92DA /* IQUIView+IQKeyboardToolbar.m in Sources */,
@@ -6333,12 +6487,14 @@
 				B972C0DF1EA745AD00BD92DA /* iCloudViewController.m in Sources */,
 				B9872BAE1E9E1E0E00ABAF69 /* MASCompositeConstraint.m in Sources */,
 				B9A70FF31FB3FAFD004F2DC9 /* UIColor+YYAdd.m in Sources */,
+				B97467B11FB9766100A2D64F /* TestViewController.m in Sources */,
 				B9105C0F1EA5E19300A6C24E /* MLTextAttachment.m in Sources */,
 				B9872B321E9E116300ABAF69 /* ViewController.m in Sources */,
 				B952A07F1EA07B3D00D7B2EF /* AFAutoPurgingImageCache.m in Sources */,
 				B9EA0F4D1FA86FFA00E1F4A6 /* WBStatusHelper.m in Sources */,
 				B972C1811EA75CF900BD92DA /* IQNSArray+Sort.m in Sources */,
 				B9A7101D1FB3FAFD004F2DC9 /* YYTextArchiver.m in Sources */,
+				B97467C01FB9936F00A2D64F /* NSObject+BARunTime.m in Sources */,
 				B952A11A1EA081FC00D7B2EF /* UIImageView+HighlightedWebCache.m in Sources */,
 				B9A710221FB3FAFD004F2DC9 /* YYTextUtilities.m in Sources */,
 				B94D681C1E9F4A6100A781E3 /* SVProgressHUD.m in Sources */,
@@ -6553,9 +6709,11 @@
 				B972C1301EA75B8D00BD92DA /* LZGestureScreen.m in Sources */,
 				B952A1161EA081FC00D7B2EF /* UIButton+WebCache.m in Sources */,
 				B9872B7A1E9E137300ABAF69 /* FirstViewController.m in Sources */,
+				B97467C11FB9936F00A2D64F /* UIAlertController+BAKit.m in Sources */,
 				B952A0CE1EA0815B00D7B2EF /* MJRefreshHeader.m in Sources */,
 				B9A70FEB1FB3FAFD004F2DC9 /* NSString+YYAdd.m in Sources */,
 				B9A7102E1FB3FAFD004F2DC9 /* YYTimer.m in Sources */,
+				B97467BF1FB9936F00A2D64F /* NSMutableAttributedString+BAKit.m in Sources */,
 				B9966BF41FA30FCC0073EB56 /* CommentCell1.m in Sources */,
 				B972C0D31EA70E5400BD92DA /* LZGroupModel.m in Sources */,
 				B9966BF31FA30FCC0073EB56 /* MessageInfoModel1.m in Sources */,
@@ -6565,6 +6723,7 @@
 				B9A7100A1FB3FAFD004F2DC9 /* YYImageCache.m in Sources */,
 				B9EA0F521FA86FFA00E1F4A6 /* YYTableView.m in Sources */,
 				B9A70FEC1FB3FAFD004F2DC9 /* NSThread+YYAdd.m in Sources */,
+				B97467C31FB9936F00A2D64F /* BAWebViewController.m in Sources */,
 				B972C0D21EA70E5400BD92DA /* LZDataModel.m in Sources */,
 				B972C1321EA75B8D00BD92DA /* LZGestureViewController.m in Sources */,
 				B94D681A1E9F4A6100A781E3 /* SVProgressAnimatedView.m in Sources */,
@@ -6714,6 +6873,7 @@
 		};
 		B9872B551E9E116400ABAF69 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EB4E361BBFE70BCEBBCEBB5 /* Pods-NewHaipei.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -6740,6 +6900,7 @@
 		};
 		B9872B561E9E116400ABAF69 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 891EBCE3FE6E90D4CA22A7EE /* Pods-NewHaipei.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
