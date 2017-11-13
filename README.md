@@ -14,3 +14,19 @@
 
 # 2017.11.09 创建pod,未来会把第三方都是用pod
 
+# 2017.11.13 以后新添加的第三方库都用pod
+pod使用方法:
+1.终端cd到项目
+2.touch Podfile,创建Podfile文件
+3.vim Podfile
+4.按键盘上的英文'i'键
+下面的"Podsfile" 0L, 0C将变成-- INSERT --
+5.输入以下文字,vim不支持鼠标.'NewHaipei'就是工程名字,NewHaipei.xcodeproj的名字,不是文件夹名字.
+target ‘NewHaipei’ do
+pod 'BAWKWebView', '~> 1.0.8'
+end
+6.先按左上角的esc键，再按shift+;键，再输入wq，点击回车，就保存并退出去了
+7.pod install
+
+
+
