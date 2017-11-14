@@ -30,3 +30,5 @@ end
 
 # 2017.11.13 添加OC和JS交互 使用https://github.com/BAHome
 
+# 2017.11.14 微博cell的相关事件使用的是代理,朋友圈使用的是block
+
