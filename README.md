@@ -28,7 +28,9 @@ end
 6.先按左上角的esc键，再按shift+;键，再输入wq，点击回车，就保存并退出去了
 7.pod install
 
+# 2017.11.13 添加OC和JS交互 使用https://github.com/BAHome
 
+# 2017.11.14 微博cell的相关事件使用的是代理,朋友圈使用的是block
 # 2019.04.15 更新Xcode10
 1. [[self.circleSet lastObject] setState:state]报错
 在代码声明circleSet属性如下：@property (nonatomic, strong) NSMutableArray *circleSet; circleSet数组元素是PCCircle类，上边方法直接拿数组元素（没有实例化实例）调用实例方法。
