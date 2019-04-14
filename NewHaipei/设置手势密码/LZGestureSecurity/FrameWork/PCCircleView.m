@@ -9,8 +9,17 @@
     BOOL isTouchBegin;
 }
 // 选中的圆的集合
-@property (nonatomic, strong) NSMutableArray *circleSet;
+//@property (nonatomic, strong) NSMutableArray *circleSet;
+/*
+ [[self.circleSet lastObject] setState:state]报错
+ 在代码声明circleSet属性如下：@property (nonatomic, strong) NSMutableArray *circleSet; circleSet数组元素是PCCircle类，上边方法直接拿数组元素（没有实例化实例）调用实例方法。
+ 
+ 解决方法：将circleSet属性声明为泛型方式如下：@property (nonatomic, strong) NSMutableArray <PCCircle*>*circleSet;
+ 
+ 再一次验证了xcode10的严谨性
 
+ */
+@property (nonatomic, strong) NSMutableArray <PCCircle*>*circleSet;
 // 当前点
 @property (nonatomic, assign) CGPoint currentPoint;
 

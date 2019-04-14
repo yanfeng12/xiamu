@@ -29,4 +29,15 @@ end
 7.pod install
 
 
+# 2019.04.15 更新Xcode10
+1. [[self.circleSet lastObject] setState:state]报错
+在代码声明circleSet属性如下：@property (nonatomic, strong) NSMutableArray *circleSet; circleSet数组元素是PCCircle类，上边方法直接拿数组元素（没有实例化实例）调用实例方法。
+
+解决方法：将circleSet属性声明为泛型方式如下：@property (nonatomic, strong) NSMutableArray <PCCircle*>*circleSet;
+
+再一次验证了xcode10的严谨性
+
+2.xcode10不允许同名文件存在；框架里的重名文件，xcode10之前一直没问题，说明xcode10比xcode9要严谨；不同的框架都存在info.plist；
+
+解决方法：忽略重读文件xcode--file--Workspace Settings--Build System--legacy Build System
 

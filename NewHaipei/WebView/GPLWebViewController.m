@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self lzSetNavigationTitle:@"新闻"];
+    [self lzSetNavigationTitle:@"OC与JS交互"];
     
     LZWeakSelf(ws)
     [self lzSetLeftButtonWithTitle:nil selectedImage:@"houtui" normalImage:@"houtui" actionBlock:^(UIButton *button) {
